@@ -1,0 +1,2 @@
+# StringR.AdminWeb
+Admin website
