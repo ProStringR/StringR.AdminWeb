@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3>Your Stringers</h3>
+      <div class="list-group">
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          *ngFor="let stringer of getListOfYourStringers(); let i = index"
+          (click)="onYourStringerClicked(i)">{{stringer}}</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <h3>Potential Stringers</h3>
+      <div class="list-group">
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          *ngFor="let stringer of getListOfPotentialStringers(); let i = index"
+          (click)="onPotentialStringerClicked(i)">{{stringer}}</button>
+      </div>
+    </div>
+  </div>
+</div>
