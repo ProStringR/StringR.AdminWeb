@@ -22,5 +22,3 @@ export interface OrderHistory {
     orderStatus: string
     paid: boolean
 }
-
-
