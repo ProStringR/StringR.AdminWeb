@@ -15,7 +15,8 @@ export class ViewStorageManagementComponent implements OnInit {
 
   ngOnInit() {
     this.dataControl.getList<OrderModel>('https://prostringr.firebaseio.com/order.json').subscribe(res => {
-      res.forEach(item => console.log(item.customerId))
+      console.log(res)
+      res.forEach(item => console.log(item))
     })
   }
 
