@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ViewStorageManagementComponent } from './view-storage-management.component';
 import { RouterModule, Routes } from '@angular/router';
+import {StorageCellComponent} from '../../list-cell/storage-cell/storage-cell.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ViewStorageManagementComponent],
+  declarations: [ViewStorageManagementComponent, StorageCellComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

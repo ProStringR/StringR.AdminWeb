@@ -4,7 +4,9 @@
     <div class="list-group">
       <div
         class="list-group-item list-group-item-action"
-        *ngFor="let item of storageList; let i = index">{{item}}</div>
+        *ngFor="let item of storageList; let i = index">
+        <app-storage-cell></app-storage-cell>
+      </div>
     </div>
   </div>
 </div>
