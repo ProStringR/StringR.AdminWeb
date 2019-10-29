@@ -7,14 +7,16 @@ import { ViewMainNavigationModule } from '../view/view-main-navigation/view-main
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ViewMainNavigationModule
+    ViewMainNavigationModule,
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

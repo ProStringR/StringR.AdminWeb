@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'addstringers', loadChildren: () => import('./../view/view-add-stringers/view-add-stringers.module').then(m => m.ViewAddStringersModule),
+    path: 'addstringers', loadChildren: () => import('./../view/view-add-stringers/view-add-stringers.module').then(m => m.ViewAddStringersModule)
   },
   {
-    path: 'economy', loadChildren: () => import('./../view/view-economy-overview/view-economy-overview.module').then(m => m.ViewEconomyOverviewModule),
+    path: 'storageManagement', loadChildren: () => import('./../view/view-storage-management/view-storage-management.module').then(m => m.ViewStorageManagementModule)
   }
 ];
 
