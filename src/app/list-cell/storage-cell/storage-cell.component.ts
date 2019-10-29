@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataControlService } from 'src/app/control/data-control.service';
 
 @Component({
   selector: 'app-storage-cell',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StorageCellComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataControl: DataControlService) { }
 
   ngOnInit() {
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataControlService} from '../../control/data-control.service';
+import { DataControlService } from '../../control/data-control.service';
+import { OrderModel } from 'src/app/model/model-order';
 
 @Component({
   selector: 'app-view-storage-management',
@@ -13,10 +14,8 @@ export class ViewStorageManagementComponent implements OnInit {
   constructor(private dataControl: DataControlService) { }
 
   ngOnInit() {
-    this.dataControl.getJSON('https://prostringr.firebaseio.com/storage/ShopMJ.json').subscribe((result) => {
-      console.log(result)
-      let datat = JSON.parse(JSON.stringify(result))
-      console.log(datat)
+    this.dataControl.getList<OrderModel>('https://prostringr.firebaseio.com/order.json').subscribe(res => {
+      res.forEach(item => console.log(item.customerId))
     })
   }
 
