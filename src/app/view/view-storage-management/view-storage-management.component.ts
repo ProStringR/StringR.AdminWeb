@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataControlService } from '../../control/data-control.service';
 import { OrderModel } from 'src/app/model/model-order';
+import { RacketStringModel } from 'src/app/model/model-racket-string';
 
 @Component({
   selector: 'app-view-storage-management',
@@ -14,13 +15,8 @@ export class ViewStorageManagementComponent implements OnInit {
   constructor(private dataControl: DataControlService) { }
 
   ngOnInit() {
-    this.dataControl.getList<OrderModel>('https://prostringr.firebaseio.com/order.json').subscribe(res => {
+    this.dataControl.getList<RacketStringModel>('https://prostringr.firebaseio.com/storage/ShopMJ.json').subscribe(res => {
       console.log(res)
-      res.forEach(item => {
-        if (item.paid) {
-          console.log(item)
-        }
-      })
     })
   }
 

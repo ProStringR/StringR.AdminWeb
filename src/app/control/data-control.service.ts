@@ -12,7 +12,7 @@ export class DataControlService {
   constructor(protected http: HttpClient) {
   }
 
-  getList<T>(url: string): Observable<T[]> {
+  public getList<T>(url: string): Observable<T[]> {
     return this.http.get<T>(url).pipe(
       map(response => {
         let res: T[] = []
