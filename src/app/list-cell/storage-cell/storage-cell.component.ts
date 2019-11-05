@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { DataControlService } from 'src/app/control/data-control.service';
 import {element} from 'protractor';
+import {RacketStringModel} from '../../model/model-racket-string';
 
 @Component({
   selector: 'app-storage-cell',
@@ -9,7 +10,7 @@ import {element} from 'protractor';
 })
 export class StorageCellComponent implements OnInit {
 
-  @Input() elementName: string;
+  @Input() element: RacketStringModel;
 
   constructor(private dataControl: DataControlService) { }
 

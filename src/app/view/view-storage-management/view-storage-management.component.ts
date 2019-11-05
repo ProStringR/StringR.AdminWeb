@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataControlService } from '../../control/data-control.service';
+import {RacketStringModel} from '../../model/model-racket-string';
+import {Firebase} from '../../utility/firebase';
 
 @Component({
   selector: 'app-view-storage-management',
@@ -8,10 +10,15 @@ import { DataControlService } from '../../control/data-control.service';
 })
 export class ViewStorageManagementComponent implements OnInit {
 
-  storageList = ['Hello', 'You'];
+  storageList: RacketStringModel[]
 
   constructor(private dataControl: DataControlService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // tslint:disable-next-line:max-line-length
+    this.dataControl.getList<RacketStringModel>(Firebase.storage + '/betaTest').subscribe((racketStrings) => {
+      this.storageList = racketStrings;
+    });
+  }
 
 }
