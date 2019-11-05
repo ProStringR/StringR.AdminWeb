@@ -12,12 +12,21 @@ export class DataControlService {
   constructor(protected http: HttpClient) {
   }
 
-  public getList<T>(url: string): Observable<T[]> {
-    return this.http.get<T>(url).pipe(
+  public getItem<T>(url: string): Observable<T> {
+    return this.http.get<T>(url + '.json').pipe(
       map(response => {
-        let res: T[] = []
-        for (let item of Object.keys(response)) {
-          res.push(response[item])
+        return response;
+      }),
+      catchError(err => throwError(err))
+    );
+  }
+
+  public getList<T>(url: string): Observable<T[]> {
+    return this.http.get<T>(url + '.json').pipe(
+      map(response => {
+        const res: T[] = []
+        for (const item of Object.keys(response)) {
+          res.push(response[item]);
         }
         return res;
       }),
