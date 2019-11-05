@@ -1,4 +1,4 @@
-enum StringTypeEnum {
+const enum StringTypeEnum {
   POLYESTER = 'Polyester',
   NATURALGUT = 'Natural Gut',
   SYNTHETICGUT = 'Synthetic Gut',

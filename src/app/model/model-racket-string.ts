@@ -1,18 +1,18 @@
 export interface RacketStringModel {
-    brand: string
-    color: string
-    length: number
-    modelName: string
-    pricePerRacket: number
-    purchaseHistory: PurchaseHistory[]
-    stringId: string
-    stringPurpose: string
-    stringType: string
-    thickness: number
+  stringId: string;
+  brand: StringBrandEnum;
+  modelName: string;
+  stringType: StringTypeEnum;
+  length: number;
+  pricePerRacket: number;
+  thickness: number;
+  color: StringColorEnum;
+  stringPurpose: RacketTypeEnum;
+  purchaseHistory: [PurchaseHistory];
 }
 
 export interface PurchaseHistory {
-    date: number
-    length: number
-    price: number
+  date: number;
+  length: number;
+  price: number;
 }

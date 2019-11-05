@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataControlService } from '../../control/data-control.service';
 import {RacketStringModel} from '../../model/model-racket-string';
 import {Firebase} from '../../utility/firebase';
+import {Constant} from '../../utility/constant';
 
 @Component({
   selector: 'app-view-storage-management',
@@ -16,7 +17,8 @@ export class ViewStorageManagementComponent implements OnInit {
 
   ngOnInit() {
     // tslint:disable-next-line:max-line-length
-    this.dataControl.getList<RacketStringModel>(Firebase.storage + '/betaTest').subscribe((racketStrings) => {
+    this.dataControl.getList<RacketStringModel>(Firebase.storage + '/' + Constant.shopId).subscribe((racketStrings) => {
+      racketStrings.sort((a , b) => (a.brand > b.brand) ? 1 : -1)
       this.storageList = racketStrings;
     });
   }

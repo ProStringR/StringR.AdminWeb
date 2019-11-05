@@ -1,4 +1,4 @@
-enum StringBrandEnum {
+const enum StringBrandEnum {
   ASHAWAY = 'Ashaway',
   BABOLAT = 'Babolat',
   DUNLOP = 'Dunlop',

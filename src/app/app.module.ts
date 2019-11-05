@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewMainNavigationModule } from './view/view-main-navigation/view-main-navigation.module';
 import {HttpClientModule} from '@angular/common/http';
+import {RacketStringService} from './service/racket-string.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
     ViewMainNavigationModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RacketStringService],
   exports: [
   ],
   bootstrap: [AppComponent]
