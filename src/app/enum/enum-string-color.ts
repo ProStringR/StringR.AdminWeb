@@ -1,4 +1,4 @@
-enum StringColorEnum {
+const enum StringColorEnum {
   BLACK = 'Black',
   BLUE = 'Blue',
   GOLD = 'Gold',
