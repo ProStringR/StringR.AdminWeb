@@ -20,6 +20,7 @@ export class ViewStorageManagementComponent implements OnInit {
     this.dataControl.getList<RacketStringModel>(Firebase.storage + '/' + Constant.shopId).subscribe((racketStrings) => {
       racketStrings.sort((a , b) => (a.brand > b.brand) ? 1 : -1)
       this.storageList = racketStrings;
+      document.getElementById('spinner').hidden = true;
     });
   }
 

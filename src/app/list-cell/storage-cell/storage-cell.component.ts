@@ -11,12 +11,14 @@ export class StorageCellComponent implements OnInit {
 
   @Input() element: RacketStringModel;
   stringTypeIndicator: string;
+  racketRemainingIndicator: string;
   description: string;
 
   constructor(private racketStringService: RacketStringService) { }
 
   ngOnInit() {
     this.stringTypeIndicator = '../../../assets/images/' + this.racketStringService.getStringTypeIndicator(this.element);
+    this.racketRemainingIndicator = '../../../assets/images/' + this.racketStringService.getStockStatus(this.element);
     this.description = this.racketStringService.getRacketStringDescription(this.element);
   }
 

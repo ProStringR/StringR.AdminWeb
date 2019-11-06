@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {RacketStringModel} from '../model/model-racket-string';
 import {RacketTypeEnum} from '../enum/enum-racket-type';
+import {Constant} from '../utility/constant';
 
 @Injectable()
 export class RacketStringService {
@@ -19,5 +20,18 @@ export class RacketStringService {
     }
 
     return 'squashball.png';
+  }
+
+  public getStockStatus(racketString: RacketStringModel): string {
+
+    const racketsRemaining = racketString.length / Constant.metersStringPerRacket;
+
+    if (racketsRemaining <= 5) {
+      return 'red_circle.png';
+    } else if (racketsRemaining <= 10) {
+      return 'yellow_circle.png';
+    } else {
+      return 'green_circle.png';
+    }
   }
 }

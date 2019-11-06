@@ -1,3 +1,5 @@
+import {RacketTypeEnum} from '../enum/enum-racket-type';
+
 export interface RacketStringModel {
   stringId: string;
   brand: StringBrandEnum;
