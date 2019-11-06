@@ -1,6 +1,8 @@
 .outer_container {
     display: grid;
     grid-template-columns: auto auto;
+    border: solid;
+    border-width: 1px;
 }
 
 .graph {
