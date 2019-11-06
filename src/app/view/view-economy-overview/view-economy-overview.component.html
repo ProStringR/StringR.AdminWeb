@@ -1,13 +1,11 @@
 <div class="economy_container">
 
     <div class="container">
+
         <app-date-picker></app-date-picker>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
-        <div>Hello</div>
+
+        <app-economy-graph *ngFor="let item of charts"></app-economy-graph>
+
     </div>
 
 </div>

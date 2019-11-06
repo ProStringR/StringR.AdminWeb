@@ -9,8 +9,8 @@ export class DatePickerComponent implements OnInit {
 
   buttons = [
     {
-      title: "14d",
-      click: 1209600000
+      title: "7d",
+      click: 604800000
     },
     {
       title: "2w",
@@ -35,6 +35,10 @@ export class DatePickerComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  pickDate(click: number) {
+    console.log(click);
   }
 
 }

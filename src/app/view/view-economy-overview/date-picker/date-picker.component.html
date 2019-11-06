@@ -2,7 +2,7 @@
 
     <div class="date_picker_container">
 
-        <div class="picker_button" *ngFor="let item of buttons"> {{item.title}} </div>
+        <div class="picker_button" *ngFor="let item of buttons" (click)="pickDate(item.click)"> {{item.title}} </div>
 
     </div>
 

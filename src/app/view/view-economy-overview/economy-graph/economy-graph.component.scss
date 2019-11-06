@@ -1,0 +1,13 @@
+.outer_container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.graph {
+    width: 100%;
+}
+
+ngx-charts-line-chart {
+    float: right;
+    width: 100%;
+}

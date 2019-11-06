@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewMainNavigationModule } from './view/view-main-navigation/view-main-navigation.module';
 import { DatePickerComponent } from './view-generic/date-picker/date-picker.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DatePickerComponent } from './view-generic/date-picker/date-picker.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     ViewMainNavigationModule
   ],
   providers: [],
