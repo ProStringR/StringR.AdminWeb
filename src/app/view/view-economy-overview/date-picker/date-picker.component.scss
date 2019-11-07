@@ -1,0 +1,22 @@
+
+.outer_container {
+    border: solid;
+    border-width: 1px;
+}
+
+.date_picker_container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 5px;
+}
+
+.picker_button {
+    padding: 2px;
+    text-align: center;
+    border-radius: 20px;
+    user-select: none;
+}
+
+.picker_button:active {
+    background: lightblue;
+}

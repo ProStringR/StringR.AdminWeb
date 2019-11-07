@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-view-add-stringers',
@@ -38,6 +38,5 @@ export class ViewAddStringersComponent implements OnInit {
 
     const stringerToRemove = this.listOfYourStringers[index];
     this.listOfYourStringers = this.listOfYourStringers.filter(obj => obj !== stringerToRemove);
-
   }
 }
