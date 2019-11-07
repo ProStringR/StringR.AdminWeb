@@ -1,0 +1,15 @@
+.outer_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    border: solid;
+    border-width: 1px;
+}
+
+.graph {
+    width: 100%;
+}
+
+ngx-charts-line-chart {
+    float: right;
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+@import "src/app/config/config.scss";
+
+.economy_container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: $Size_GLOBAL_MARGIN_TOP;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  width: 100%;
+}
+
