@@ -1,3 +1,9 @@
+@import "src/app/config/config.scss";
+
 h2 {
   text-align: center;
+}
+
+.container {
+  margin-top: $Size_GLOBAL_MARGIN_TOP;
 }

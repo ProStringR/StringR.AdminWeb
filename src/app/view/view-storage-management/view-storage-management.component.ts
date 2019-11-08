@@ -23,21 +23,4 @@ export class ViewStorageManagementComponent implements OnInit {
       document.getElementById('spinner').hidden = true;
     });
   }
-
-  onItemClicked(index: number) {
-    const htmlElement = document.getElementsByClassName('details').item(index) as HTMLElement;
-
-    const button = document.getElementsByClassName('btn-link').item(index) as HTMLElement;
-
-    button.addEventListener('click', () => {
-      console.log('hej steen');
-      htmlElement.style.display = 'none';
-    })
-
-    if (htmlElement.style.display == null || htmlElement.style.display === '' || htmlElement.style.display === 'none') {
-      htmlElement.style.display = 'block';
-    } else {
-      htmlElement.style.display = 'none';
-    }
-  }
 }

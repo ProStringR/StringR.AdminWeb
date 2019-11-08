@@ -4,6 +4,8 @@ import { ViewStorageManagementComponent } from './view-storage-management.compon
 import { RouterModule, Routes } from '@angular/router';
 import {StorageCellComponent} from '../../list-cell/storage-cell/storage-cell.component';
 import {PurchaseHistoryCellComponent} from '../../list-cell/purchase-history-cell/purchase-history-cell.component';
+import {AppModule} from '../../app.module';
+import {ViewStringDetailComponent} from '../view-string-detail/view-string-detail.component';
 
 const routes: Routes = [
   {
@@ -14,10 +16,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ViewStorageManagementComponent, StorageCellComponent, PurchaseHistoryCellComponent],
+  declarations: [ViewStorageManagementComponent, StorageCellComponent, PurchaseHistoryCellComponent, ViewStringDetailComponent],
+  exports: [
+    PurchaseHistoryCellComponent
+  ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ]
 })
 export class ViewStorageManagementModule { }
