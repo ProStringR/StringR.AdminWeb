@@ -11,7 +11,6 @@ export class RacketStringService {
   }
 
   public getStringTypeIndicator(racketString: RacketStringModel): string {
-    console.log(RacketTypeEnum.TENNIS);
 
     if (racketString.stringPurpose === RacketTypeEnum.TENNIS) {
       return 'tennisball.png';
