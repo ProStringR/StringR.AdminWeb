@@ -24,7 +24,7 @@ export class RacketStringService {
 
   public getStockStatus(racketString: RacketStringModel): string {
 
-    const racketsRemaining = racketString.length / Constant.metersStringPerRacket;
+    const racketsRemaining = this.getRacketsRemaining(racketString);
 
     if (racketsRemaining <= 5) {
       return 'red_circle.png';
@@ -33,5 +33,9 @@ export class RacketStringService {
     } else {
       return 'green_circle.png';
     }
+  }
+
+  public getRacketsRemaining(racketString: RacketStringModel): number {
+    return Math.floor(racketString.length / Constant.metersStringPerRacket);
   }
 }

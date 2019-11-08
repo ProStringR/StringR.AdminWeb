@@ -9,7 +9,7 @@
     <div class="list-group">
       <div
         class="list-group-item list-group-item-action"
-        *ngFor="let item of storageList;">
+        *ngFor="let item of storageList; let i = index;" (click)="onItemClicked(i)">
         <app-storage-cell [element] = item></app-storage-cell>
       </div>
     </div>

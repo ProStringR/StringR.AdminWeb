@@ -5,10 +5,53 @@
     </div>
     <div class="col-10" style="padding: 0;" id="middle">
       <p>{{description}}</p>
-<!--      <p>{{element.brand + ' | ' + element.modelName + ' | ' + element.thickness}}</p>-->
     </div>
     <div class="col-1" style="padding: 0;">
       <img src="{{racketRemainingIndicator}}" class="img-thumbnail" style="margin-right: 15px">
     </div>
   </div>
+</div>
+
+<div class="container details">
+  <br>
+  <h3>Information</h3>
+  <div class="row">
+    <div *ngFor="let label of topRowLabels;" class="col-4">
+      <h4 class="text-center">{{label}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let value of topRowValues;" class="col-4">
+      <p class="text-center">{{value}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let label of bottomRowLabels;" class="col-6">
+      <h4 class="text-center">{{label}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let value of bottomRowValues;" class="col-6">
+      <p class="text-center">{{value}}</p>
+    </div>
+  </div>
+
+  <br>
+
+  <h3>Add Additional String</h3>
+  <div class="row">
+    <input type="text" class="form-control col-3" placeholder="Length in m" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    <input type="text" class="form-control col-3" placeholder="Buy date" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    <input type="text" class="form-control col-3" placeholder="Price" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    <button type="button" class="btn btn-secondary col-3">Add</button>
+  </div>
+
+  <br>
+
+  <h3>Purchase History</h3>
+  <div class="col-12" *ngFor="let history of element.purchaseHistory;">
+    <app-purchase-history-cell [history]="history"></app-purchase-history-cell>
+  </div>
+
+  <button type="button" class="btn btn-link col-12">Close</button>
 </div>
