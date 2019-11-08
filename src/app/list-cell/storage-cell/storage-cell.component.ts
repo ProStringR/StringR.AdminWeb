@@ -28,7 +28,5 @@ export class StorageCellComponent implements OnInit {
 
     this.topRowValues = ['babolat', this.element.modelName, 'fuck dig selv'];
     this.bottomRowValues = [this.racketStringService.getRacketsRemaining(this.element), this.element.pricePerRacket];
-
-    console.log(this.element.purchaseHistory);
   }
 }
