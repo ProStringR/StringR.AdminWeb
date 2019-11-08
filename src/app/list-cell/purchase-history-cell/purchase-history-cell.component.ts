@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PurchaseHistory} from '../../model/model-racket-string';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-purchase-history-cell',
@@ -9,10 +10,13 @@ import {PurchaseHistory} from '../../model/model-racket-string';
 export class PurchaseHistoryCellComponent implements OnInit {
 
   @Input() history: PurchaseHistory;
+  purchaseDate: string;
 
-  constructor() { }
+  constructor(public datePipe: DatePipe) { }
 
   ngOnInit() {
+    const date = new Date(this.history.date);
+    this.purchaseDate = this.datePipe.transform(date, 'dd/MM/yyyy');
   }
 
 }
