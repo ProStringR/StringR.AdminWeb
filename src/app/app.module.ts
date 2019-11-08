@@ -9,20 +9,24 @@ import { RacketStringService } from './service/racket-string.service';
 import { DatePickerComponent } from './view-generic/date-picker/date-picker.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PurchaseHistoryCellComponent } from './list-cell/purchase-history-cell/purchase-history-cell.component';
+import { ViewStringDetailComponent } from './view/view-string-detail/view-string-detail.component';
+import {ViewStorageManagementModule} from './view/view-storage-management/view-storage-management.module';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatePickerComponent
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ViewMainNavigationModule,
-    HttpClientModule
+    HttpClientModule,
+    ViewStorageManagementModule
   ],
-  providers: [RacketStringService],
+  providers: [RacketStringService, DatePipe],
   exports: [
   ],
   bootstrap: [AppComponent]
