@@ -16,7 +16,6 @@ export class ViewStorageManagementComponent implements OnInit {
   constructor(private dataControl: DataControlService) { }
 
   ngOnInit() {
-    // tslint:disable-next-line:max-line-length
     this.dataControl.getList<RacketStringModel>(Firebase.storage + '/' + Constant.shopId).subscribe((racketStrings) => {
       racketStrings.sort((a , b) => (a.brand > b.brand) ? 1 : -1)
       this.storageList = racketStrings;
