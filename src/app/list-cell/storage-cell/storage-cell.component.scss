@@ -1,0 +1,40 @@
+@import "../../config/config.scss";
+
+img {
+  border: 0 none;
+  box-shadow: none;
+  background: none;
+}
+
+.img-thumbnail {
+  @include style_center_items();
+  max-width: 50%;
+  min-width: 30px;
+}
+
+p {
+  @include style_center_items();
+  font-size: 1rem;
+}
+
+.btn-link {
+  color: black;
+  text-decoration: none;
+}
+
+.details {
+  display: none;
+}
+
+/* Smartphones */
+@media handheld and (max-width: 400px), screen and (max-device-width: 400px), screen and (max-width: 461px) {
+  .img-thumbnail {
+     float: none !important;
+  }
+
+  p {
+    //text-align: center;
+    padding-left: 15px;
+  }
+
+}
