@@ -10,6 +10,7 @@ import { DatePickerComponent } from './view-generic/date-picker/date-picker.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ViewStorageManagementModule} from './view/view-storage-management/view-storage-management.module';
 import {DatePipe} from '@angular/common';
+import { ViewOrderOverviewComponent } from './view/view-order-overview/view-order-overview.component';
 
 @NgModule({
   declarations: [
