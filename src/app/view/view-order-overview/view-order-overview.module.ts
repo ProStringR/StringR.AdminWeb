@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {ViewOrderOverviewComponent} from './view-order-overview.component';
 import {ViewOrderDetailComponent} from '../view-order-detail/view-order-detail.component';
+import {OrderHistoryCellComponent} from '../../list-cell/order-history-cell/order-history-cell.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ViewOrderOverviewComponent, ViewOrderDetailComponent],
+  declarations: [ViewOrderOverviewComponent, ViewOrderDetailComponent, OrderHistoryCellComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
