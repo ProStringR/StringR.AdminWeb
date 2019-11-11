@@ -1,0 +1,21 @@
+@import "src/app/config/config.scss";
+
+.container {
+  margin-top: $Size_GLOBAL_MARGIN_TOP;
+}
+
+.row {
+  margin-top: $Size_GLOBAL_MARGIN_TOP;
+}
+
+h3 {
+  text-align: center;
+}
+
+.col-3 {
+  border: black;
+}
+
+.col-7 {
+  margin-left: auto;
+}

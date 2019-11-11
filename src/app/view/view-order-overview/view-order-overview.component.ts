@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderModel} from '../../model/model-order';
+import {DataControlService} from '../../control/data-control.service';
+import {Firebase} from '../../utility/firebase';
 
 @Component({
   selector: 'app-view-order-overview',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewOrderOverviewComponent implements OnInit {
 
-  constructor() { }
+  columns = ['Received', 'Done', 'Delivered', 'Completed'];
+  received: OrderModel[] = [];
+  done: OrderModel[] = [];
+  delivered: OrderModel[] = [];
+  completed: OrderModel[] = [];
+  orders = [this.received, this.done, this.delivered, this.completed];
+
+  constructor(private dataControl: DataControlService) { }
 
   ngOnInit() {
+    this.dataControl.getItem<OrderModel>(Firebase.order + '/4A9AE1AC-A020-42F0-83BB-DF157B822CC9').subscribe( (order) => {
+      this.done.push(order);
+    });
   }
 
 }
