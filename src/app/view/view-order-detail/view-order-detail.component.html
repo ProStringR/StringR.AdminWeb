@@ -1,1 +1,75 @@
-<p>{{element.orderId}}</p>
+<div class="container">
+  <div class="col-12 text-center">
+    <h5>Status: Done | {{element.paid ? 'Paid' : 'Not Paid'}}</h5>
+  </div>
+
+<!--  <div class="rowContainer" *ngFor="let item of labels; let i = index">-->
+<!--    <div class="row">-->
+<!--      <div class="col-4" *ngFor="let label of item[i]">-->
+<!--        <p class="font-weight-bold">{{label}}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-4" *ngFor="let value of values[i]">-->
+<!--        <p class="font-weight-normal">{{value}}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+  <div class="row">
+    <div class="col-4" *ngFor="let label of firstLabelRow">
+      <p class="font-weight-bold">{{label}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let value of firstValueRow">
+      <p class="font-weight-normal">{{value}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4" *ngFor="let label of secondLabelRow">
+      <p class="font-weight-bold">{{label}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let value of secondValueRow">
+      <p class="font-weight-normal">{{value}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4" *ngFor="let label of thirdLabelRow">
+      <p class="font-weight-bold">{{label}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let value of thirdValueRow">
+      <p class="font-weight-normal">{{value}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4" *ngFor="let label of fourthLabelRow">
+      <p class="font-weight-bold">{{label}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" *ngFor="let value of fourthValueRow">
+      <p class="font-weight-normal">{{value}}</p>
+    </div>
+  </div>
+
+  <h5>Order History</h5>
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let history of element.orderHistory;">
+        <app-order-history-cell [history]="history"></app-order-history-cell>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+
