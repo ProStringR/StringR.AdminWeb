@@ -34,8 +34,12 @@
   <br>
 
   <h4>Purchase History</h4>
-  <div class="col-12" *ngFor="let history of element.purchaseHistory;">
-    <app-purchase-history-cell [history]="history"></app-purchase-history-cell>
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let history of element.purchaseHistory;">
+        <app-purchase-history-cell [history]="history"></app-purchase-history-cell>
+      </li>
+    </ul>
   </div>
 
 </div>
