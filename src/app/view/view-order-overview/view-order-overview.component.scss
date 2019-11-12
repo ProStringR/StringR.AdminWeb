@@ -1,6 +1,6 @@
 @import "src/app/config/config.scss";
 
-.container {
+.container-fluid {
   margin-top: $Size_GLOBAL_MARGIN_TOP;
 }
 
@@ -18,4 +18,10 @@ h3 {
 
 .col-7 {
   margin-left: auto;
+}
+
+.search {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
 }
