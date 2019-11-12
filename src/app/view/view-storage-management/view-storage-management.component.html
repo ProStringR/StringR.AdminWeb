@@ -10,8 +10,8 @@
       </div>
     </div>
 
-  <div id="accordion">
-    <div class="card" *ngFor="let item of storageList; let i = index">
+  <div id="accordion" *mobxAutorun="{ detach: true }">
+    <div class="card" *ngFor="let item of store.racketStrings; let i = index">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
           <app-storage-cell [element]="item" data-toggle="collapse" [attr.data-target]="'#item' + item.stringId" aria-expanded="true" aria-controls="collapseOne"></app-storage-cell>
