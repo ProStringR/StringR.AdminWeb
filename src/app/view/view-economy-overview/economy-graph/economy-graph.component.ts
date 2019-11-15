@@ -14,7 +14,7 @@ export class EconomyGraphComponent {
 
   single: any[];
 
-  //public view: any[] = [700, 200]
+  public view: any[] = [700, 200]
   public showXAxis = true;
   public showYAxis = true;
   public gradient = false;
