@@ -37,4 +37,5 @@ export class RacketStringService {
   public getRacketsRemaining(racketString: RacketStringModel): number {
     return Math.floor(racketString.length / Constant.metersStringPerRacket);
   }
+  
 }
