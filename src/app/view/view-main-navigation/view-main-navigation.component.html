@@ -1,18 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="">StringR</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-        <a class="nav-link" (click)="navigateToPage('economy')">Economy Overview</a>
-        <a class="nav-link" (click)="navigateToPage('addstringers')">Manage stringers</a>
-        <a class="nav-link" (click)="navigateToPage('storageManagement')">Storage</a>
-        <a class="nav-link" (click)="navigateToPage('orderOverview')">Orders</a>
+      <a class="nav-link" (click)="navigateToPage('economy')">Economy Overview</a>
+      <a class="nav-link" (click)="navigateToPage('addstringers')">Manage stringers</a>
+      <a class="nav-link" (click)="navigateToPage('storageManagement')">Storage</a>
+      <a class="nav-link" (click)="navigateToPage('orderOverview')">Orders</a>
     </ul>
   </div>
 </nav>
 
-<ng-content></ng-content>
+<div class="page">
+  <router-outlet></router-outlet>
+</div>
 
 <app-footer></app-footer>
