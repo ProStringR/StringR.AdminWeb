@@ -10,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'storageManagement', loadChildren: () => import('./view/view-storage-management/view-storage-management.module').then(m => m.ViewStorageManagementModule)
+  },
+  {
+    path: 'orderOverview', loadChildren: () => import('./view/view-order-overview/view-order-overview.module').then(m => m.ViewOrderOverviewModule)
   }
 ];
 
