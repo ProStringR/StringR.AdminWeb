@@ -9,21 +9,23 @@ import { Constant } from '../utility/constant';
 @Injectable(
     { providedIn: 'root' }
 )
-export class StorageManagementStore {
+export class AddStringersStore {
 
     constructor(private fetch: DataControlService) {
-        this.updateState()
+        // this.updateState()
     }
 
+    /*
     @observable
     racketStrings: RacketStringModel[] = []
 
     @action
     async updateState() {
         await this.fetch.getList<RacketStringModel>(Firebase.storage + '/' + Constant.shopId).subscribe((items) => {
-            items.sort((a, b) => (a.brand > b.brand) ? 1 : -1)
+            items.sort((a , b) => (a.brand > b.brand) ? 1 : -1)
             this.racketStrings = items
         })
     }
+    */
 
 }
