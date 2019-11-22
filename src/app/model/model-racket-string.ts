@@ -1,4 +1,7 @@
-import {RacketTypeEnum} from '../enum/enum-racket-type';
+import { RacketTypeEnum } from '../enum/enum-racket-type';
+import { StringBrandEnum } from '../enum/enum-string-brand';
+import { StringTypeEnum } from '../enum/enum-string-type';
+import { StringColorEnum } from '../enum/enum-string-color';
 
 export interface RacketStringModel {
   stringId: string;
