@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, Output, ComponentFactoryResolver, ChangeDetectionStrategy } from '@angular/core';
 import { AddStringersStore } from 'src/app/store/add-stringers.store';
 import { autorun } from 'mobx';
 import { StringrModel } from 'src/app/model/model-stringr';
@@ -6,13 +6,15 @@ import { StringrModel } from 'src/app/model/model-stringr';
 @Component({
   selector: 'app-view-add-stringers',
   templateUrl: './view-add-stringers.component.html',
-  styleUrls: ['./view-add-stringers.component.scss']
+  styleUrls: ['./view-add-stringers.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ViewAddStringersComponent implements OnInit {
 
   constructor(private store: AddStringersStore) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onPotentialStringerClicked(index: number) {
     this.store.yourStringrs.push(this.store.allStringrs[index]);

@@ -1,26 +1,56 @@
 <div class="container">
   <div class="row">
+
+
     <div class="col-6">
       <h3>Your Stringers</h3>
+
+      <br>
+
       <div class="list-group">
-        <button
-          type="button"
-          class="list-group-item list-group-item-action"
-          *ngFor="let stringr of store.yourStringrs let i = index"
-          (click)="onYourStringerClicked(i)">{{stringr.name}}
-        </button>
+        <div id="accordion" *mobxAutorun="{ detach: true }">
+          <div class="card" *ngFor="let item of store.yourStringrs; let i = index">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <app-stringr-cell [element]="item" data-toggle="collapse" [attr.data-target]="'#item' + item.userId"
+                  aria-expanded="true" aria-controls="collapseOne"></app-stringr-cell>
+              </h5>
+            </div>
+
+            <div id="item{{item.userId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <app-view-stringr-details [element]="item" [index]="i" (onSuggest)="onYourStringerClicked($event[0])"></app-view-stringr-details>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="col-6">
       <h3>Potential Stringers</h3>
+
+      <br>
+
       <div class="list-group">
-        <button
-          type="button"
-          class="list-group-item list-group-item-action"
-          *ngFor="let stringr of store.allStringrs let i = index"
-          (click)="onPotentialStringerClicked(i)">{{stringr.name}}
-        </button>
+        <div id="accordion" *mobxAutorun="{ detach: true }">
+          <div class="card" *ngFor="let item of store.allStringrs; let i = index">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <app-stringr-cell [element]="item" data-toggle="collapse" [attr.data-target]="'#item' + item.userId"
+                  aria-expanded="true" aria-controls="collapseOne"></app-stringr-cell>
+              </h5>
+            </div>
+
+            <div id="item{{item.userId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <app-view-stringr-details [element]="item" [index]="i" (onSuggest)="onPotentialStringerClicked($event[0])"></app-view-stringr-details>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
