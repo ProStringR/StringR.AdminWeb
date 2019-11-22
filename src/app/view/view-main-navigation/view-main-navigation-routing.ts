@@ -7,7 +7,10 @@ const routes: Routes = [
     {
         path: '', component: ViewMainNavigationComponent, children: [
             {
-                path: '', loadChildren: () => import('./../view-economy-overview/view-economy-overview.module').then(m => m.ViewEconomyOverviewModule)
+                path: '', redirectTo: '/economy', pathMatch: 'full'
+            },
+            {
+                path: 'economy', loadChildren: () => import('./../view-economy-overview/view-economy-overview.module').then(m => m.ViewEconomyOverviewModule)
             },
             {
                 path: 'addstringers', loadChildren: () => import('./../view-add-stringers/view-add-stringers.module').then(m => m.ViewAddStringersModule)
