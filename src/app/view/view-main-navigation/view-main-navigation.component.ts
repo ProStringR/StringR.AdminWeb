@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { RacketTypeEnum } from 'src/app/enum/enum-racket-type';
 
 @Component({
   selector: 'app-view-main-navigation',
@@ -11,10 +10,7 @@ export class ViewMainNavigationComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  
-
   ngOnInit() {
-    console.log(RacketTypeEnum.TENNIS)
   }
 
   public navigateToPage(path: string) {
