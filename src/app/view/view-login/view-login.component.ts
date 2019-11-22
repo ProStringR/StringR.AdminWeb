@@ -10,7 +10,10 @@ export class ViewLoginComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // TODO - Skal fjernes når authentication service er færdigt.
+    this.router.navigate(['mainPage'])
+  }
 
   login() {
     this.router.navigate(['mainPage'])
