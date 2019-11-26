@@ -1,21 +1,27 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { StringrModel } from 'src/app/model/model-stringr';
+import { Whoms } from 'src/app/enum/enum-whos-stringr';
 
 @Component({
   selector: 'app-view-stringr-details',
   templateUrl: './view-stringr-details.component.html',
-  styleUrls: ['./view-stringr-details.component.scss']
+  styleUrls: ['./view-stringr-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ViewStringrDetailsComponent {
 
+export class ViewStringrDetailsComponent {
+ 
   @Input() index: number;
+  @Input() listIs: boolean;
   @Input() element: StringrModel;
   @Output() onSuggest: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
-  
+  constructor() {}
+
   pickStringr() {
     this.onSuggest.emit([this.index]);
   }
 
 }
+
+

@@ -1,6 +1,18 @@
-<div class="row">
-    <p (click)="pickStringr()">{{element.name}}</p>
+<div class="outer_container">
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{element.name}}</li>
+        <li class="list-group-item">{{element.email}}</li>
+        <li class="list-group-item">{{element.phoneNumber}}</li>
+        <li class="list-group-item">Prefered Stringing Type: {{element.preferedRacketType}}</li>
+    </ul>
+
+    <div class="knap" *ngIf="listIs == true">
+        <button type="button" class="btn btn-danger" (click)="pickStringr()">Remove</button>
+    </div>
+
+    <div class="knap" *ngIf="listIs == false">
+        <button type="button" class="btn btn-success" (click)="pickStringr()">Add</button>
+    </div>
+
 </div>
-
-
-
