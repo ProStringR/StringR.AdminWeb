@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ViewLoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     // TODO - Skal fjernes når authentication service er færdigt.
@@ -18,6 +18,5 @@ export class ViewLoginComponent implements OnInit {
   login() {
     this.router.navigate(['mainPage'])
   }
-
 
 }
