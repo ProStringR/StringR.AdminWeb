@@ -34,4 +34,8 @@ export class DataControlService {
     );
   }
 
+  public firstGet(url: string) {
+    return this.http.get(url + '.json')
+  }
+
 }

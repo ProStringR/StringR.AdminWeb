@@ -6,8 +6,9 @@
         <button
           type="button"
           class="list-group-item list-group-item-action"
-          *ngFor="let stringer of getListOfYourStringers(); let i = index"
-          (click)="onYourStringerClicked(i)">{{stringer}}</button>
+          *ngFor="let stringr of store.yourStringrs let i = index"
+          (click)="onYourStringerClicked(i)">{{stringr.name}}
+        </button>
       </div>
     </div>
     <div class="col-6">
@@ -16,8 +17,9 @@
         <button
           type="button"
           class="list-group-item list-group-item-action"
-          *ngFor="let stringer of getListOfPotentialStringers(); let i = index"
-          (click)="onPotentialStringerClicked(i)">{{stringer}}</button>
+          *ngFor="let stringr of store.allStringrs let i = index"
+          (click)="onPotentialStringerClicked(i)">{{stringr.name}}
+        </button>
       </div>
     </div>
   </div>
