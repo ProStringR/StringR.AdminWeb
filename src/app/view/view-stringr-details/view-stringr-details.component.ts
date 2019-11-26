@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { StringrModel } from 'src/app/model/model-stringr';
-import { Whoms } from 'src/app/enum/enum-whos-stringr';
 
 @Component({
   selector: 'app-view-stringr-details',

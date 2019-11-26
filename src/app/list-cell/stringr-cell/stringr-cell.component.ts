@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StringrModel } from 'src/app/model/model-stringr';
 
 @Component({
@@ -6,13 +6,7 @@ import { StringrModel } from 'src/app/model/model-stringr';
   templateUrl: './stringr-cell.component.html',
   styleUrls: ['./stringr-cell.component.scss']
 })
-export class StringrCellComponent implements OnInit {
-
+export class StringrCellComponent {
   @Input() element: StringrModel;
-
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }
