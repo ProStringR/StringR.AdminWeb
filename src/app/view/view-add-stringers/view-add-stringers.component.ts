@@ -1,7 +1,5 @@
-import { Component, OnInit, Output, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AddStringersStore } from 'src/app/store/add-stringers.store';
-import { autorun } from 'mobx';
-import { StringrModel } from 'src/app/model/model-stringr';
 
 @Component({
   selector: 'app-view-add-stringers',
@@ -10,7 +8,7 @@ import { StringrModel } from 'src/app/model/model-stringr';
 })
 export class ViewAddStringersComponent implements OnInit {
 
-  constructor(private store: AddStringersStore) { }
+  constructor(public store: AddStringersStore) { }
 
   ngOnInit() {}
 
@@ -19,7 +17,6 @@ export class ViewAddStringersComponent implements OnInit {
 
     const stringerToRemove = this.store.allStringrs[index];
     this.store.allStringrs = this.store.allStringrs.filter(obj => obj !== stringerToRemove);
-
   }
 
   onYourStringerClicked(index: number) {
@@ -28,4 +25,5 @@ export class ViewAddStringersComponent implements OnInit {
     const stringerToRemove = this.store.yourStringrs[index];
     this.store.yourStringrs = this.store.yourStringrs.filter(obj => obj !== stringerToRemove);
   }
+  
 }
