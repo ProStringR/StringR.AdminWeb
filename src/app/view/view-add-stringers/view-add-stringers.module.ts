@@ -25,4 +25,5 @@ const routes: Routes = [
     MobxAngularModule
   ]
 })
+
 export class ViewAddStringersModule { }

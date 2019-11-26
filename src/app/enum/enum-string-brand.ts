@@ -1,17 +1,17 @@
-const enum StringBrandEnum {
-  ASHAWAY = 'Ashaway',
-  BABOLAT = 'Babolat',
-  DUNLOP = 'Dunlop',
-  GAMMA = 'Gamma',
-  HEAD = 'Head',
-  KIRSCHBAUM = 'Kirschbaum',
-  LUXILON = 'Luxilon',
-  PRINCE = 'Prince',
-  SIGNUMPRO = 'Signum Pro',
-  SOLINCO = 'Solinco',
-  TECNIFIBRE = 'Tecnifibre',
-  VOLKL = 'Volkl',
-  WILSON = 'Wilson',
-  YONEX = 'Yonex',
-  DEFAULT = 'No Brand'
+export enum StringBrandEnum {
+  ASHAWAY,
+  BABOLAT,
+  DUNLOP,
+  GAMMA,
+  HEAD,
+  KIRSCHBAUM,
+  LUXILON,
+  PRINCE,
+  SIGNUMPRO,
+  SOLINCO,
+  TECNIFIBRE,
+  VOLKL,
+  WILSON,
+  YONEX,
+  DEFAULT
 }

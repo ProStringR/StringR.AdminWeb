@@ -1,9 +1,5 @@
 export enum RacketTypeEnum {
-  TENNIS = 'Tennis',
-  BADMINTON = 'Badminton',
-  SQUASH = 'Squash'
+  TENNIS,
+  BADMINTON,
+  SQUASH
 }
-
-const tennis = RacketTypeEnum.TENNIS;
-const badminton = RacketTypeEnum.BADMINTON;
-const squash = RacketTypeEnum.SQUASH;

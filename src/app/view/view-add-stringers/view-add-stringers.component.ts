@@ -1,7 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { AddStringersStore } from 'src/app/store/add-stringers.store';
-import { autorun } from 'mobx';
-import { StringrModel } from 'src/app/model/model-stringr';
 
 @Component({
   selector: 'app-view-add-stringers',
@@ -42,4 +40,5 @@ export class ViewAddStringersComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.saveCurrentSetup()
   }
+
 }
