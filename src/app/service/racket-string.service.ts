@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {RacketStringModel} from '../model/model-racket-string';
-import {RacketTypeEnum} from '../enum/enum-racket-type';
-import {Constant} from '../utility/constant';
+import { Injectable } from '@angular/core';
+import { RacketStringModel } from '../model/model-racket-string';
+import { RacketTypeEnum } from '../enum/enum-racket-type';
+import { Constant } from '../utility/constant';
 
 @Injectable()
 export class RacketStringService {
@@ -37,5 +37,4 @@ export class RacketStringService {
   public getRacketsRemaining(racketString: RacketStringModel): number {
     return Math.floor(racketString.length / Constant.metersStringPerRacket);
   }
-  
 }
