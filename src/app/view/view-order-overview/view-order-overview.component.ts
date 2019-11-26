@@ -25,4 +25,8 @@ export class ViewOrderOverviewComponent implements OnInit {
     });
   }
 
+  search(search: string) {
+    console.log(search)
+  }
+
 }

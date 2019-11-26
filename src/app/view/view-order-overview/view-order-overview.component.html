@@ -2,7 +2,7 @@
   <h2 class="col-12 text-center">Order Overview</h2>
 
   <!-- Search form -->
-  <input class="form-control col-12 search" type="text" placeholder="Search" aria-label="Search">
+  <input class="form-control col-12 search" [(ngModel)] = "searchText" (ngModelChange) = "search(searchText)" type="text" placeholder="Search" aria-label="Search">
 
 
   <div class="row">
