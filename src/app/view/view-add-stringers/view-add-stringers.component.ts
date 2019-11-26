@@ -10,7 +10,7 @@ import { StringrModel } from 'src/app/model/model-stringr';
 })
 export class ViewAddStringersComponent implements OnInit {
 
-  constructor(private store: AddStringersStore) { }
+  constructor(public store: AddStringersStore) { }
 
   ngOnInit() {}
 
