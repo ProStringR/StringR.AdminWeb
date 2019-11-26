@@ -4,6 +4,7 @@ import { ViewAddStringersComponent } from './view-add-stringers.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MobxAngularModule } from 'mobx-angular';
 import { ViewStringrDetailsComponent } from '../view-stringr-details/view-stringr-details.component';
+import { StringrCellComponent } from 'src/app/list-cell/stringr-cell/stringr-cell.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ViewAddStringersComponent,
-    ViewStringrDetailsComponent
+    ViewStringrDetailsComponent,
+    StringrCellComponent
   ],
   imports: [
     CommonModule,

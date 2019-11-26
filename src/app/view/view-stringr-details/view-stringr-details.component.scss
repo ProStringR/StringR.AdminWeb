@@ -1,0 +1,17 @@
+@import "src/app/config/config.scss";
+
+.outer_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.knap {
+  margin-top: 4%;
+  text-align: center;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}

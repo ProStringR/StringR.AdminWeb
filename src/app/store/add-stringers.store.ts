@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
-import { observable, action } from 'mobx-angular';
+import { observable, action, computed } from 'mobx-angular';
 import { DataControlService } from '../control/data-control.service';
 import { Firebase } from '../utility/firebase';
 import { StringrModel } from '../model/model-stringr';
 
-
 @Injectable(
     { providedIn: 'root' }
 )
+    
 export class AddStringersStore {
 
     constructor(private fetch: DataControlService) {
@@ -26,5 +26,9 @@ export class AddStringersStore {
             this.allStringrs = items;
         });
     }
-    
+
+    async updateBackend() {
+        // TODO Save yourStringrs to backend.
+    }
+
 }

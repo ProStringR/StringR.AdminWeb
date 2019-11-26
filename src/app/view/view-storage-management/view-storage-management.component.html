@@ -3,12 +3,13 @@
   <h2>Storage Overview</h2>
 
   <br>
-  
+
   <div id="accordion" *mobxAutorun="{ detach: true }">
     <div class="card" *ngFor="let item of store.racketStrings; let i = index">
-      <div class="card-header" id="headingOne">
+      <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.stringId"
+        aria-expanded="true" aria-controls="collapseOne">
         <h5 class="mb-0">
-          <app-storage-cell [element]="item" data-toggle="collapse" [attr.data-target]="'#item' + item.stringId" aria-expanded="true" aria-controls="collapseOne"></app-storage-cell>
+          <app-storage-cell [element]="item"></app-storage-cell>
         </h5>
       </div>
 
