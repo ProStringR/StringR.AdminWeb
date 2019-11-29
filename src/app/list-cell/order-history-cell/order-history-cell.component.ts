@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {OrderHistory} from '../../model/model-order';
+import {OrderHistory} from '../../model/model-order3';
 import {DatePipe} from '@angular/common';
 
 @Component({
