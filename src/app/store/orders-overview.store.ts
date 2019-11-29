@@ -25,7 +25,6 @@ export class OrdersOverviewStore {
 
         this.fetch.getList<OrderModel>(API.orderShopId + '/1').subscribe((res) => {
             res.forEach((order) => {
-                console.log(order)
                 switch (order.orderStatus) {
                     case 0: received.push(order); break;
                     case 1: done.push(order); break;
