@@ -1,6 +1,7 @@
 <div class="container">
   <div class="col-12 text-center">
-    <h5>Status: Done | {{element.paid ? 'Paid' : 'Not Paid'}}</h5>
+    <!-- TODO Mangler måske noget på OrderModel elementet ? -->
+    <h5>Status: Done | {{element.orderStatus ? 'Paid' : 'Not Paid'}}</h5>
   </div>
 
 <!--  <div class="rowContainer" *ngFor="let item of labels; let i = index">-->
@@ -64,10 +65,10 @@
   <h5>Order History</h5>
   <div class="col-12">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let history of element.orderHistory;">
-        <!-- TODO Mangler at genopbygge order history -->
+      <!-- <li class="list-group-item" *ngFor="let history of element.orderHistory;">
+          TODO Mangler at genopbygge order history
         <app-order-history-cell></app-order-history-cell>
-      </li>
+      </li> -->
     </ul>
   </div>
 
