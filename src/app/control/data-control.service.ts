@@ -22,7 +22,7 @@ export class DataControlService {
   }
 
   public getList<T>(url: string): Observable<T[]> {
-    return this.http.get<T>(url + '.json').pipe(
+    return this.http.get<T>(url).pipe(
       map(response => {
         const res: T[] = []
         for (const item of Object.keys(response)) {
