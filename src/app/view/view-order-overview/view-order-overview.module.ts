@@ -5,6 +5,7 @@ import { ViewOrderOverviewComponent } from './view-order-overview.component';
 import { ViewOrderDetailComponent } from '../view-order-detail/view-order-detail.component';
 import { OrderHistoryCellComponent } from '../../list-cell/order-history-cell/order-history-cell.component';
 import { FormsModule } from '@angular/forms';
+import { MobxAngularModule } from 'mobx-angular';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    MobxAngularModule
   ]
 })
 export class ViewOrderOverviewModule { }
