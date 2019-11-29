@@ -26,13 +26,10 @@ export class ViewOrderDetailComponent implements OnInit {
   constructor(public datePipe: DatePipe) { }
 
   ngOnInit() {
-    this.firstValueRow = [this.element.stringId, this.element.stringId, this.element.stringId];
-    this.secondValueRow =
-      ['M: ' + this.element.tensionVertical + ' C: ' + this.element.tensionVertical,
-      this.element.price,
-      this.datePipe.transform(new Date(this.element.deliveryDate), 'dd/MM/yyyy')];
-    this.thirdValueRow = [this.element.racketId, this.element.racketId, this.element.racketId];
-    this.fourthValueRow = [this.element.customerId, this.element.customerId, this.element.customerId];
+    this.firstValueRow = [this.element.racketString.brand, this.element.racketString.model, this.element.racketString.main];
+    this.secondValueRow = ['M: ' + this.element.tensionVertical + ' C: ' + this.element.tensionVertical, this.element.price, this.datePipe.transform(new Date(this.element.deliveryDate), 'dd/MM/yyyy')];
+    this.thirdValueRow = [this.element.racket.brand, this.element.racket.model, this.element.racket.main];
+    this.fourthValueRow = [this.element.customer.firstName + ' ' + this.element.customer.lastName, this.element.customer.phone, this.element.customer.email];
   }
 
 }
