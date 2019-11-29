@@ -1,3 +1,4 @@
+// TODO Mangler Paid og OrderHistory
 export interface OrderModel {
     comment: string
     customer: Person
