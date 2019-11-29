@@ -9,6 +9,9 @@ import { AddStringersStore } from 'src/app/store/add-stringers.store';
 })
 export class ViewAddStringersComponent implements OnDestroy {
 
+  searchYoursText
+  searchPotentialText
+
   constructor(private store: AddStringersStore) {
     window.onbeforeunload = (e) => {
       this.saveCurrentSetup()
