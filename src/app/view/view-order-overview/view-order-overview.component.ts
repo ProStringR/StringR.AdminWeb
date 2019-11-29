@@ -1,31 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { OrderModel } from '../../model/model-order';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { OrdersOverviewStore } from 'src/app/store/orders-overview.store';
 
 @Component({
   selector: 'app-view-order-overview',
   templateUrl: './view-order-overview.component.html',
-  styleUrls: ['./view-order-overview.component.scss']
+  styleUrls: ['./view-order-overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ViewOrderOverviewComponent implements OnInit {
+export class ViewOrderOverviewComponent {
 
   searchText
   columns = ['Received', 'Done', 'Delivered', 'Completed'];
-  received: OrderModel[] = [];
-  done: OrderModel[] = [];
-  delivered: OrderModel[] = [];
-  completed: OrderModel[] = [];
-  orders = [this.received, this.done, this.delivered, this.completed];
-  
 
-  constructor(private store: OrdersOverviewStore) { }
+  constructor(private store: OrdersOverviewStore) {}
 
-  ngOnInit() {
-
-  }
-
-  search(search: string) {
-    console.log(search)
-  }
+  search(search: string) {console.log(search)}
 
 }
