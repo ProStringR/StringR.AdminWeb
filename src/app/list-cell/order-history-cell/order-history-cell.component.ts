@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {OrderHistory} from '../../model/model-order3';
 import {DatePipe} from '@angular/common';
 
 @Component({
@@ -9,14 +8,14 @@ import {DatePipe} from '@angular/common';
 })
 export class OrderHistoryCellComponent implements OnInit {
 
-  @Input() history: OrderHistory;
+  @Input() history: any;
 
   date: string;
 
   constructor(public datePipe: DatePipe) { }
 
   ngOnInit() {
-    this.date = this.datePipe.transform(new Date(this.history.date), 'dd/MM/yyyy');
+    //this.date = this.datePipe.transform(new Date(this.history.date), 'dd/MM/yyyy');
   }
 
 }
