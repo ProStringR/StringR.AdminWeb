@@ -15,6 +15,7 @@ import { DataControlService } from './control/data-control.service';
 // Mobx
 import { StorageManagementStore } from './store/storage-management.store';
 import { AddStringersStore } from './store/add-stringers.store';
+import { OrdersOverviewStore } from './store/orders-overview.store';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AddStringersStore } from './store/add-stringers.store';
     DatePipe,
     DataControlService,
     StorageManagementStore,
-    AddStringersStore
+    AddStringersStore,
+    OrdersOverviewStore
   ],
   exports: [
   ],
