@@ -7,14 +7,14 @@ import { Constant } from '../utility/constant';
 export class RacketStringService {
 
   public getRacketStringDescription(racketString: RacketStringModel): string {
-    return racketString.brand + ' | ' + racketString.modelName + ' | ' + racketString.thickness;
+    return racketString.stringBrand + ' | ' + racketString.stringModel + ' | ' + racketString.stringThickness;
   }
 
   public getStringTypeIndicator(racketString: RacketStringModel): string {
 
-    if (racketString.stringPurpose === RacketTypeEnum.TENNIS) {
+    if (racketString.stringPurpose == RacketTypeEnum.TENNIS) {
       return 'tennisball.png';
-    } else if (racketString.stringPurpose === RacketTypeEnum.BADMINTON) {
+    } else if (racketString.stringPurpose == RacketTypeEnum.BADMINTON) {
       return 'shuttlecock.png';
     }
 
@@ -35,6 +35,6 @@ export class RacketStringService {
   }
 
   public getRacketsRemaining(racketString: RacketStringModel): number {
-    return Math.floor(racketString.length / Constant.metersStringPerRacket);
+    return Math.floor(racketString.lengthInStock / Constant.metersStringPerRacket);
   }
 }
