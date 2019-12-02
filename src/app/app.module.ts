@@ -11,8 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewStorageManagementModule } from './view/view-storage-management/view-storage-management.module';
 import { DatePipe } from '@angular/common';
 import { DataControlService } from './control/data-control.service';
+
+// Mobx
 import { StorageManagementStore } from './store/storage-management.store';
 import { AddStringersStore } from './store/add-stringers.store';
+import { OrdersOverviewStore } from './store/orders-overview.store';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { AddStringersStore } from './store/add-stringers.store';
     DatePipe,
     DataControlService,
     StorageManagementStore,
-    AddStringersStore
+    AddStringersStore,
+    OrdersOverviewStore
   ],
   exports: [
   ],

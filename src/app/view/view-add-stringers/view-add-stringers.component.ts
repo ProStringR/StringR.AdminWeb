@@ -9,23 +9,34 @@ import { AddStringersStore } from 'src/app/store/add-stringers.store';
 })
 export class ViewAddStringersComponent implements OnDestroy {
 
+  searchYoursText
+  searchPotentialText
+
   constructor(private store: AddStringersStore) {
     window.onbeforeunload = (e) => {
       this.saveCurrentSetup()
     }
   }
 
-  onPotentialStringerClicked(index: number) {
-    this.store.yourStringrs.push(this.store.allStringrs[index]);
+  searchPotential(search: string) {
+    this.store.filterPotential = search;
+  }
 
-    const stringerToRemove = this.store.allStringrs[index];
-    this.store.allStringrs = this.store.allStringrs.filter(obj => obj !== stringerToRemove);
+  searchYours(search: string) {
+    this.store.filterYours = search;
+  }
+
+  onPotentialStringerClicked(index: number) {
+    this.store.yourStringrs.push(this.store.potentialStringrs[index]);
+
+    const stringerToRemove = this.store.potentialStringrs[index];
+    this.store.potentialStringrs = this.store.potentialStringrs.filter(obj => obj !== stringerToRemove);
 
     this.saveCurrentSetup();
   }
 
   onYourStringerClicked(index: number) {
-    this.store.allStringrs.push(this.store.yourStringrs[index]);
+    this.store.potentialStringrs.push(this.store.yourStringrs[index]);
 
     const stringerToRemove = this.store.yourStringrs[index];
     this.store.yourStringrs = this.store.yourStringrs.filter(obj => obj !== stringerToRemove);

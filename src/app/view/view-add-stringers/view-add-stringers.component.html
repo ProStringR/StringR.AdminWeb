@@ -6,9 +6,14 @@
 
       <br>
 
+      <!-- Search form -->
+      <input class="form-control col-12 search" [(ngModel)] = "searchYoursText" (ngModelChange) = "searchYours(searchYoursText)" type="text" placeholder="Search" aria-label="Search">
+
+      <br>
+
       <div class="list-group">
         <div id="accordion1" *mobxAutorun="{ detach: true }">
-          <div class="card" *ngFor="let item of store.yourStringrs; let i = index">
+          <div class="card" *ngFor="let item of store.yourStringrsFiltered; let i = index">
             <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.userId"
               aria-expanded="true" aria-controls="collapseOne">
               <h5 class="mb-0">
@@ -32,9 +37,14 @@
 
       <br>
 
+      <!-- Search form -->
+      <input id="searchPotential" class="form-control col-12 search" [(ngModel)] = "searchPotentialText" (ngModelChange) = "searchPotential(searchPotentialText)" type="text" placeholder="Search" aria-label="Search">
+
+      <br>
+
       <div class="list-group">
         <div id="accordion2" *mobxAutorun="{ detach: true }">
-          <div class="card" *ngFor="let item of store.allStringrs; let i = index">
+          <div class="card" *ngFor="let item of store.allStringrsFiltered; let i = index">
             <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.userId"
               aria-expanded="true" aria-controls="collapseOne">
               <h5 class="mb-0">

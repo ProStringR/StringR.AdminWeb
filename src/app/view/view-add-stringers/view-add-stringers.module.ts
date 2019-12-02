@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MobxAngularModule } from 'mobx-angular';
 import { ViewStringrDetailsComponent } from '../view-stringr-details/view-stringr-details.component';
 import { StringrCellComponent } from 'src/app/list-cell/stringr-cell/stringr-cell.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MobxAngularModule
+    MobxAngularModule,
+    FormsModule
   ]
 })
 

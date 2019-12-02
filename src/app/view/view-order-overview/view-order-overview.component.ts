@@ -1,28 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import {OrderModel} from '../../model/model-order';
-import {DataControlService} from '../../control/data-control.service';
-import {Firebase} from '../../utility/firebase';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { OrdersOverviewStore } from 'src/app/store/orders-overview.store';
 
 @Component({
   selector: 'app-view-order-overview',
   templateUrl: './view-order-overview.component.html',
-  styleUrls: ['./view-order-overview.component.scss']
+  styleUrls: ['./view-order-overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ViewOrderOverviewComponent implements OnInit {
+export class ViewOrderOverviewComponent {
 
+  searchText
   columns = ['Received', 'Done', 'Delivered', 'Completed'];
-  received: OrderModel[] = [];
-  done: OrderModel[] = [];
-  delivered: OrderModel[] = [];
-  completed: OrderModel[] = [];
-  orders = [this.received, this.done, this.delivered, this.completed];
 
-  constructor(private dataControl: DataControlService) { }
+  constructor(private store: OrdersOverviewStore) {}
 
-  ngOnInit() {
-    this.dataControl.getItem<OrderModel>(Firebase.order + '/4A9AE1AC-A020-42F0-83BB-DF157B822CC9').subscribe( (order) => {
-      this.done.push(order);
-    });
-  }
+  search(search: string) {console.log(search)}
 
 }
