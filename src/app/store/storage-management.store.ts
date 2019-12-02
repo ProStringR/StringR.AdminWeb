@@ -4,7 +4,7 @@ import { RacketStringModel } from '../model/model-racket-string';
 import { DataControlService } from '../control/data-control.service';
 import { Firebase } from '../utility/firebase';
 import { Constant } from '../utility/constant';
-
+import { API } from '../config/api';
 
 @Injectable(
     { providedIn: 'root' }
