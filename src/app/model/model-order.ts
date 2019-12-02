@@ -6,8 +6,8 @@ export interface OrderModel {
     id: number
     orderStatus: number
     price: number
-    racket: RacketOrString
-    racketString: RacketOrString
+    racket: Racket
+    racketString: RacketString
     stringer: Person
     tensionHorizontal: number
     tensionVertical: number
@@ -20,7 +20,7 @@ export interface Person {
     phone: string
 }
 
-export interface RacketOrString {
+export interface Racket {
     brand: string
     cross: number
     gripSize: number
@@ -28,6 +28,16 @@ export interface RacketOrString {
     main: number
     model: string
     weight: number
+}
+
+export interface RacketString {
+    id: number
+    brand: string
+    model: string
+    type: string
+    thickness: string
+    purpose: string
+    color: string
 }
 
 
