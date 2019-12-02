@@ -1,10 +1,10 @@
 <div class="outer_container">
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{element.name}}</li>
+        <li class="list-group-item">{{element.firstName}} {{element.lastName}}</li>
         <li class="list-group-item">{{element.email}}</li>
         <li class="list-group-item">{{element.phoneNumber}}</li>
-        <li class="list-group-item">Prefered Stringing Type: {{element.preferedRacketType}}</li>
+        <li class="list-group-item">Prefered Stringing Type: {{element.preferredRacketType}}</li>
     </ul>
 
     <div class="knap" *ngIf="listIs == true">

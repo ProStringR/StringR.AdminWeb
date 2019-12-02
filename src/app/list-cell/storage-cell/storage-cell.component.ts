@@ -26,7 +26,7 @@ export class StorageCellComponent implements OnInit {
     this.racketRemainingIndicator = '../../../assets/images/' + this.racketStringService.getStockStatus(this.element);
     this.description = this.racketStringService.getRacketStringDescription(this.element);
 
-    this.topRowValues = [this.element.brand, this.element.modelName, this.element.stringType];
-    this.bottomRowValues = [this.racketStringService.getRacketsRemaining(this.element), this.element.pricePerRacket];
+    this.topRowValues = [this.element.stringBrand, this.element.stringModel, this.element.stringType];
+    this.bottomRowValues = [this.racketStringService.getRacketsRemaining(this.element), this.element.price];
   }
 }

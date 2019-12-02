@@ -6,14 +6,14 @@
 
   <div id="accordion" *mobxAutorun="{ detach: true }">
     <div class="card" *ngFor="let item of store.racketStrings; let i = index">
-      <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.stringId"
+      <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.id"
         aria-expanded="true" aria-controls="collapseOne">
         <h5 class="mb-0">
           <app-storage-cell [element]="item"></app-storage-cell>
         </h5>
       </div>
 
-      <div id="item{{item.stringId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div id="item{{item.id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           <app-view-string-detail [element]="item"></app-view-string-detail>
         </div>

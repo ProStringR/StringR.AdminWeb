@@ -1,7 +1,9 @@
 export interface StringrModel {
-    email: string;
-    name: string;
-    phoneNumber: string;
-    preferedRacketType: string;
-    userId: string;
+    stringerId: number
+    firstName: string
+    lastName: string
+    phoneNumber: string
+    email: string
+    preferredRacketType: number
 }
+

@@ -1,10 +1,8 @@
 import { Injectable } from "@angular/core";
-import { observable, action } from 'mobx-angular';
+import { observable, action, computed } from 'mobx-angular';
 import { RacketStringModel } from '../model/model-racket-string';
 import { DataControlService } from '../control/data-control.service';
-import { Firebase } from '../utility/firebase';
-import { Constant } from '../utility/constant';
-
+import { API } from '../config/api';
 
 @Injectable(
     { providedIn: 'root' }
@@ -20,8 +18,8 @@ export class StorageManagementStore {
 
     @action
     async updateState() {
-        await this.fetch.getList<RacketStringModel>(Firebase.storage + '/' + Constant.shopId).subscribe((items) => {
-            items.sort((a, b) => (a.brand > b.brand) ? 1 : -1)
+        await this.fetch.getList<RacketStringModel>(API.get_racketString_by_shopId(1)).subscribe((items) => {
+            items.sort((a, b) => (a.stringBrand > b.stringBrand) ? 1 : -1)
             this.racketStrings = items
         })
     }

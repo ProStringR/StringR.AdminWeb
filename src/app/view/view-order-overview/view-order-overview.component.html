@@ -7,32 +7,98 @@
 
 
   <div class="row">
-    <div class="col-xl" *ngFor="let label of columns; let i = index">
+    <div class="col-xl">
 
-      <h3>{{label}}</h3>
+      <h3>{{columns[0]}}</h3>
 
       <br>
 
       <div *mobxAutorun="{ detach: true }">
-        <div *ngFor="let item of store.allOrdersForShop[i]">
-          <div>
-            <div class="card">
-              <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#label' + item.id">
-                <h5 class="mb-0">
-                  <p>{{item.customer.firstName}}</p>
-                </h5>
-              </div>
+        <div class="card" *ngFor="let item of store.filteredReceived">
+          <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#label' + item.id">
+            <h5 class="mb-0">
+              <p>{{item.customer.firstName}}</p>
+            </h5>
+          </div>
 
-              <div id="label{{item.id}}" class="collapse" aria-labelledby="headingOne">
-                <div class="card-body">
-                  <app-view-order-detail [element]="item"></app-view-order-detail>
-                </div>
-              </div>
+          <div id="label{{item.id}}" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+              <app-view-order-detail [element]="item"></app-view-order-detail>
             </div>
           </div>
         </div>
       </div>
-
     </div>
+
+    <div class="col-xl">
+
+      <h3>{{columns[1]}}</h3>
+
+      <br>
+
+      <div *mobxAutorun="{ detach: true }">
+        <div class="card" *ngFor="let item of store.filteredDone">
+          <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#label' + item.id">
+            <h5 class="mb-0">
+              <p>{{item.customer.firstName}}</p>
+            </h5>
+          </div>
+
+          <div id="label{{item.id}}" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+              <app-view-order-detail [element]="item"></app-view-order-detail>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl">
+
+      <h3>{{columns[2]}}</h3>
+
+      <br>
+
+      <div *mobxAutorun="{ detach: true }">
+        <div class="card" *ngFor="let item of store.filteredDelivered">
+          <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#label' + item.id">
+            <h5 class="mb-0">
+              <p>{{item.customer.firstName}}</p>
+            </h5>
+          </div>
+
+          <div id="label{{item.id}}" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+              <app-view-order-detail [element]="item"></app-view-order-detail>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl">
+
+      <h3>{{columns[3]}}</h3>
+
+      <br>
+
+      <div *mobxAutorun="{ detach: true }">
+        <div class="card" *ngFor="let item of store.filteredCompleted">
+          <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#label' + item.id">
+            <h5 class="mb-0">
+              <p>{{item.customer.firstName}}</p>
+            </h5>
+          </div>
+
+          <div id="label{{item.id}}" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+              <app-view-order-detail [element]="item"></app-view-order-detail>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>

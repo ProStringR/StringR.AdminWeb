@@ -1,5 +1,5 @@
 export enum RacketTypeEnum {
-  TENNIS,
-  BADMINTON,
-  SQUASH
+  TENNIS = 'Tennis',
+  BADMINTON = 'Badmintom',
+  SQUASH = 'Squash'
 }

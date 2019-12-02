@@ -7,21 +7,21 @@
       <br>
 
       <!-- Search form -->
-      <input class="form-control col-12 search" [(ngModel)] = "searchYoursText" (ngModelChange) = "searchYours(searchYoursText)" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control col-12 search" [(ngModel)]="searchYoursText"
+        (ngModelChange)="searchYours(searchYoursText)" type="text" placeholder="Search" aria-label="Search">
 
       <br>
 
       <div class="list-group">
-        <div id="accordion1" *mobxAutorun="{ detach: true }">
+        <div id="accordion2" *mobxAutorun="{ detach: true }">
           <div class="card" *ngFor="let item of store.yourStringrsFiltered; let i = index">
-            <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.userId"
-              aria-expanded="true" aria-controls="collapseOne">
+            <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.stringerId" aria-expanded="true" aria-controls="collapseOne">
               <h5 class="mb-0">
                 <app-stringr-cell [element]="item"></app-stringr-cell>
               </h5>
             </div>
 
-            <div id="item{{item.userId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion1">
+            <div id="item{{item.stringerId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion2">
               <div class="card-body">
                 <app-view-stringr-details [element]="item" [index]="i" [listIs]="true"
                   (onSuggest)="onYourStringerClicked($event[0])"></app-view-stringr-details>
@@ -38,27 +38,27 @@
       <br>
 
       <!-- Search form -->
-      <input id="searchPotential" class="form-control col-12 search" [(ngModel)] = "searchPotentialText" (ngModelChange) = "searchPotential(searchPotentialText)" type="text" placeholder="Search" aria-label="Search">
+      <input id="searchPotential" class="form-control col-12 search" [(ngModel)]="searchPotentialText"
+        (ngModelChange)="searchPotential(searchPotentialText)" type="text" placeholder="Search" aria-label="Search">
 
       <br>
 
       <div class="list-group">
-        <div id="accordion2" *mobxAutorun="{ detach: true }">
-          <div class="card" *ngFor="let item of store.allStringrsFiltered; let i = index">
-            <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.userId"
-              aria-expanded="true" aria-controls="collapseOne">
-              <h5 class="mb-0">
-                <app-stringr-cell [element]="item"></app-stringr-cell>
-              </h5>
-            </div>
+        <div id="accordion1" *mobxAutorun="{ detach: true }">
+            <div class="card" *ngFor="let item of store.allStringrsFiltered; let i = index">
+              <div class="card-header" id="headingOne" data-toggle="collapse" [attr.data-target]="'#item' + item.stringerId"
+                aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="mb-0">
+                  <app-stringr-cell [element]="item"></app-stringr-cell>
+                </h5>
+              </div>
 
-            <div id="item{{item.userId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion2">
-              <div class="card-body">
-                <app-view-stringr-details [element]="item" [index]="i" [listIs]="false"
-                  (onSuggest)="onPotentialStringerClicked($event[0])"></app-view-stringr-details>
+              <div id="item{{item.stringerId}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion1">
+                <div class="card-body">
+                  <app-view-stringr-details [element]="item" [index]="i" [listIs]="false" (onSuggest)="onPotentialStringerClicked($event[0])"></app-view-stringr-details>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

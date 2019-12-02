@@ -12,8 +12,7 @@ export class ViewOrderOverviewComponent {
   searchText
   columns = ['Received', 'Done', 'Delivered', 'Completed'];
 
-  constructor(private store: OrdersOverviewStore) {}
-
-  search(search: string) {console.log(search)}
+  constructor(private store: OrdersOverviewStore) { }
+  search(search: string) { this.store.filterOrders = search };
 
 }
