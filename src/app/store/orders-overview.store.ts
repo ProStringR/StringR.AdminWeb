@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { observable, action, computed } from 'mobx-angular';
 import { DataControlService } from '../control/data-control.service';
-import { API } from '../config/api'
 import { OrderModel } from '../model/model-order';
+import { API } from '../config/api';
 
 @Injectable(
     { providedIn: 'root' }
@@ -14,7 +14,19 @@ export class OrdersOverviewStore {
     }
 
     @observable
-    allOrdersForShop: Array<OrderModel[]> = Array<OrderModel[]>(4);
+    private received: OrderModel[] = [];
+
+    @observable
+    private done: OrderModel[] = [];
+
+    @observable
+    private delivered: OrderModel[] = [];
+
+    @observable
+    private completed: OrderModel[] = [];
+
+    @observable
+    filterOrders: string = '';
 
     @action
     async updateState() {
@@ -23,7 +35,7 @@ export class OrdersOverviewStore {
         let delivered: OrderModel[] = [];
         let completed: OrderModel[] = [];
 
-        this.fetch.getList<OrderModel>(API.orderShopId + '/1').subscribe((res) => {
+        await this.fetch.getList<OrderModel>(API.get_order_by_shopId(1)).subscribe((res) => {
             res.forEach((order) => {
                 switch (order.orderStatus) {
                     case 0: received.push(order); break;
@@ -34,8 +46,31 @@ export class OrdersOverviewStore {
                         break;
                 }
             })
-            this.allOrdersForShop = [received, done, delivered, completed];
+            this.received = received;
+            this.done = done;
+            this.delivered = delivered;
+            this.completed = completed;
         })
+    }
+
+    @computed
+    get filteredReceived(): OrderModel[] {
+        return this.received.filter((type) => JSON.stringify(type).toLowerCase().includes(this.filterOrders.toLowerCase()));
+    }
+
+    @computed
+    get filteredDone(): OrderModel[] {
+        return this.done.filter((type) => JSON.stringify(type).toLowerCase().includes(this.filterOrders.toLowerCase()));
+    }
+
+    @computed
+    get filteredDelivered(): OrderModel[] {
+        return this.delivered.filter((type) => JSON.stringify(type).toLowerCase().includes(this.filterOrders.toLowerCase()));
+    }
+
+    @computed
+    get filteredCompleted(): OrderModel[] {
+        return this.completed.filter((type) => JSON.stringify(type).toLowerCase().includes(this.filterOrders.toLowerCase()));
     }
 
 
