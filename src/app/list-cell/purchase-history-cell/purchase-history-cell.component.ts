@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {DatePipe} from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-purchase-history-cell',
@@ -8,6 +8,7 @@ import {DatePipe} from '@angular/common';
 })
 export class PurchaseHistoryCellComponent implements OnInit {
 
+  // TODO Få sat purchase history tilbage ind senere.
   //@Input() history: PurchaseHistory;
   purchaseDate: string;
 
