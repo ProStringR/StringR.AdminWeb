@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { observable, action, computed } from 'mobx-angular';
 import { DataControlService } from '../control/data-control.service';
-import { Firebase } from '../utility/firebase';
 import { StringrModel } from '../model/model-stringr';
+import { API } from '../config/api';
 
 @Injectable(
     { providedIn: 'root' }
@@ -28,7 +28,7 @@ export class AddStringersStore {
 
     @action
     async updateState() {
-        await this.fetch.getList<StringrModel>(Firebase.stringer).subscribe((stringrs) => {
+        await this.fetch.getList<StringrModel>(API.get_stringer_by_shopId(1)).subscribe((stringrs) => {
             this.potentialStringrs = stringrs;
         });
     }
