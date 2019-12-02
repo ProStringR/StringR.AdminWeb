@@ -6,11 +6,6 @@ export class API {
     static post_auth = '/api/v1/Authentication';
 
     /**
-     * Boss
-     */
-    static get_boss = '/api​/Boss';
-
-    /**
      * Customer
      */
     static get_customer = '/api/v1/Customer';
