@@ -17,7 +17,7 @@ export class ViewLoginComponent {
     private authService: AuthService,
     private router: Router,
     private fb: FormBuilder) {
-    this.form = fb.group({
+    this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
