@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
@@ -9,11 +9,26 @@ import { map, catchError } from 'rxjs/operators';
 
 export class DataControlService {
 
-  constructor(protected http: HttpClient) {
+  constructor(protected http: HttpClient) { }
+
+  public postObject<T>(url: string, object: T, headers?: HttpHeaders) {
+
+    if (headers == null) {
+      headers = new HttpHeaders({
+        'Content-type' : 'application/json'
+      })
+    }
+
+    return this.http.post(url, object, {
+      headers: headers
+    }).pipe(
+      map(data => data),
+      catchError(err => throwError(err))
+    );
   }
 
   public getItem<T>(url: string): Observable<T> {
-    return this.http.get<T>(url + '.json').pipe(
+    return this.http.get<T>(url).pipe(
       map(response => {
         return response;
       }),
@@ -32,10 +47,6 @@ export class DataControlService {
       }),
       catchError(error => throwError(error)),
     );
-  }
-
-  public firstGet(url: string) {
-    return this.http.get(url)
   }
 
 }
