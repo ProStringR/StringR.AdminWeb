@@ -6,12 +6,10 @@ import { ViewMainNavigationRoutingModule } from './view-main-navigation-routing'
 
 @NgModule({
   declarations: [ViewMainNavigationComponent, FooterComponent],
-  exports: [
-    ViewMainNavigationComponent
-  ],
   imports: [
     CommonModule,
-    ViewMainNavigationRoutingModule
-  ]
+    ViewMainNavigationRoutingModule,
+  ],
 })
+
 export class ViewMainNavigationModule { }
