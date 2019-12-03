@@ -10,8 +10,16 @@ export class ViewEconomyOverviewComponent {
 
   sortTime: number = 0;
 
-  charts = [
-    1, 2, 3, 4, 5
+  charts: any[] = [
+    {
+      title: 'Revenue'
+    },
+    {
+      title: 'Expenses'
+    },
+    {
+      title: 'Profit'
+    }
   ]
 
   constructor() { }
