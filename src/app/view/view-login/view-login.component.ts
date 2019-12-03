@@ -12,11 +12,11 @@ export class ViewLoginComponent implements OnInit {
 
   ngOnInit() {
     // TODO - Skal fjernes når authentication service er færdigt.
-    this.router.navigate(['mainPage'])
+    //this.router.navigate(['mainPage'])
   }
 
   login() {
-    this.router.navigate(['mainPage'])
+    this.router.navigate(['/mainPage'])
   }
 
 }
