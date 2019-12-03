@@ -14,10 +14,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./view/view-main-navigation/view-main-navigation.module').
         then(m => m.ViewMainNavigationModule),
-  },
-  {
-    path: '**', redirectTo: '/login', pathMatch: 'full'
-  },
+  }
 ];
 
 @NgModule({
