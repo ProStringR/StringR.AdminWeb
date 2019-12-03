@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-view-login',
@@ -11,11 +11,23 @@ import { NgForm } from '@angular/forms';
 
 export class ViewLoginComponent {
 
-  // TODO Router skal fjernes helt når authguard kører.
-  constructor(private authService: AuthService, private router: Router) { }
+  form;
 
-  login(form: NgForm) {
-    this.authService.login(form.value.username, form.value.password);
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private fb: FormBuilder) {
+    this.form = fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  login() {
+    if (this.form.valid) {
+      console.log("Form Is valid")
+      this.authService.login(this.form.value.username, this.form.value.password);
+    }
     //this.router.navigate(['/mainPage']);
   }
 
