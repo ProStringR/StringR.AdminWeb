@@ -6,12 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-  
+
 export class AppComponent {
   title = 'AdminWeb';
 
   constructor(private router: Router) {
-    this.router.navigate(['/mainPage'])
-    console.log(localStorage.getItem('token'))
+    this.router.navigate(['/mainPage']);
   }
 }
