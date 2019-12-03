@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-view-login',
   templateUrl: './view-login.component.html',
   styleUrls: ['./view-login.component.scss']
 })
-export class ViewLoginComponent implements OnInit {
 
-  constructor(private router: Router) {}
+export class ViewLoginComponent {
 
-  ngOnInit() {
-    // TODO - Skal fjernes når authentication service er færdigt.
-    //this.router.navigate(['mainPage'])
-  }
+  // TODO Router skal fjernes helt når authguard kører.
+  constructor(private authService: AuthService, private router: Router) { }
 
-  login() {
-    this.router.navigate(['/mainPage'])
+  login(form: NgForm) {
+    this.authService.login(form.value.username, form.value.password);
+    //this.router.navigate(['/mainPage']);
   }
 
 }
