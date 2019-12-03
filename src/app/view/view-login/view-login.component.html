@@ -3,18 +3,18 @@
     <div class="login-form">
 
         <div>
-            <form #signupForm="ngForm" (ngSubmit)="login(signupForm)">
+            <form [formGroup]="form" (ngSubmit)="login()">
                 <div>
                     Username<br>
-                    <input type="text" name="username" id="username" ngModel required />
+                    <input type="text" placeholder="Username" formControlName="username"/>
                 </div>
                 <div>
                     Password<br>
-                    <input type="password" name="password" id="password" ngModel required />
+                    <input type="password" placeholder="Password" formControlName="password"/>
                 </div>
 
                 <br>
-                
+
                 <div style="text-align: center;">
                     <button type="submit">LOGIN</button>
                 </div>
