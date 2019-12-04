@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
   templateUrl: './view-main-navigation.component.html',
   styleUrls: ['./view-main-navigation.component.css']
 })
+
 export class ViewMainNavigationComponent {
 
   constructor(private router: Router) { }
-  
+
   logout() {
-    console.log("LOGOUT!!");
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }

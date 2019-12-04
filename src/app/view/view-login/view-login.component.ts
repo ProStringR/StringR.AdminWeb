@@ -25,7 +25,6 @@ export class ViewLoginComponent {
 
   login() {
     if (this.form.valid) {
-      console.log("Form Is valid")
       this.authService.login(this.form.value.username, this.form.value.password);
     }
     //this.router.navigate(['/mainPage']);
