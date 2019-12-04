@@ -9,7 +9,7 @@ import { single } from './data';
 })
 export class EconomyGraphComponent {
 
-  @Input() title;
+  @Input() title: string;
   @Input() data;
 
   single: any[];

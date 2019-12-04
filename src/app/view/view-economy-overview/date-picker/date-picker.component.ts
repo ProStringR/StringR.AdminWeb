@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-date-picker',
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss']
 })
-export class DatePickerComponent implements OnInit {
+
+export class DatePickerComponent {
+
+  @Output() onEmit: EventEmitter<any> = new EventEmitter();
 
   buttons = [
     {
@@ -30,15 +33,10 @@ export class DatePickerComponent implements OnInit {
     }
   ]
 
-  constructor() {
-
-  }
-
-  ngOnInit() {
-  }
+  constructor() { }
 
   pickDate(click: number) {
-    console.log(click);
+    this.onEmit.emit([click]);
   }
 
 }

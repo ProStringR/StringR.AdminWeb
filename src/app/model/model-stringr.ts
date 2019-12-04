@@ -2,8 +2,9 @@ export interface StringrModel {
     stringerId: number
     firstName: string
     lastName: string
-    phoneNumber: string
+    phoneNumber: number
     email: string
-    preferredRacketType: number
+    preferredRacketType: string
+    teamId: number
 }
 
