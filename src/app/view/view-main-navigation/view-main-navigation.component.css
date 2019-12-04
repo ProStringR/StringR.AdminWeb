@@ -1,4 +1,10 @@
 .page {
     min-height: 90vh;
   }
+
+  .logout {
+    border-radius: 20px;
+    color: white;
+    background-color: red;
+  }
   

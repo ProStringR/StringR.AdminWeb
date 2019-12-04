@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewStorageManagementModule } from './view/view-storage-management/view-storage-management.module';
 import { DatePipe } from '@angular/common';
 import { DataControlService } from './control/data-control.service';
+import { JwtModule } from '@auth0/angular-jwt';
 
 // Mobx
 import { StorageManagementStore } from './store/storage-management.store';
@@ -27,6 +28,7 @@ import { OrdersOverviewStore } from './store/orders-overview.store';
     ViewMainNavigationModule,
     HttpClientModule,
     ViewStorageManagementModule,
+    JwtModule,
   ],
   providers: [
     RacketStringService,
@@ -34,7 +36,7 @@ import { OrdersOverviewStore } from './store/orders-overview.store';
     DataControlService,
     StorageManagementStore,
     AddStringersStore,
-    OrdersOverviewStore
+    OrdersOverviewStore,
   ],
   exports: [
   ],

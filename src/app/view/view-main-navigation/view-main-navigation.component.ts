@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-main-navigation',
   templateUrl: './view-main-navigation.component.html',
   styleUrls: ['./view-main-navigation.component.css']
 })
-export class ViewMainNavigationComponent implements OnInit {
+export class ViewMainNavigationComponent {
 
   constructor(private router: Router) { }
-
-  ngOnInit() {
+  
+  logout() {
+    console.log("LOGOUT!!");
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
-  public navigateToPage(path: string) {
-    this.router.navigate([path]);
-  }
 }
