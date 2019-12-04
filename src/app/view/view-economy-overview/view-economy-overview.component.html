@@ -2,9 +2,9 @@
 
     <div class="container">
 
-        <app-date-picker></app-date-picker>
+        <app-date-picker (onEmit)="changeSortTime($event[0])"></app-date-picker>
 
-        <app-economy-graph *ngFor="let item of charts"></app-economy-graph>
+        <app-economy-graph *ngFor="let item of charts" [title]="item.title"></app-economy-graph>
 
     </div>
 

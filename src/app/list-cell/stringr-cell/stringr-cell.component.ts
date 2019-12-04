@@ -6,6 +6,7 @@ import { StringrModel } from 'src/app/model/model-stringr';
   templateUrl: './stringr-cell.component.html',
   styleUrls: ['./stringr-cell.component.scss']
 })
+
 export class StringrCellComponent {
   @Input() element: StringrModel;
   constructor() { }
