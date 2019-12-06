@@ -14,5 +14,6 @@ export class ViewOrderOverviewComponent {
 
   constructor(private store: OrdersOverviewStore) { }
   search(search: string) { this.store.filterOrders = search };
+  ngAfterViewInit(): void {this.store.updateState()}
 
 }
