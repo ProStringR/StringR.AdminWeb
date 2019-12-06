@@ -11,15 +11,15 @@ export class DataControlService {
 
   constructor(protected http: HttpClient) { }
 
-  public postObject<T>(url: string, object: T, headers?: HttpHeaders) {
+  public postObject<T>(url: string, object: any, headers?: HttpHeaders) {
 
     if (headers == null) {
       headers = new HttpHeaders({
         'Content-type' : 'application/json'
-      })
+      });
     }
 
-    return this.http.post(url, object, {
+    return this.http.post<T>(url, object, {
       headers: headers
     }).pipe(
       map(data => data),

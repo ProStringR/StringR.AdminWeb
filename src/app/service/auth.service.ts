@@ -4,6 +4,7 @@ import { DataControlService } from '../control/data-control.service';
 import { API } from './../config/api';
 import { User } from './../model/model-user';
 import { Router } from '@angular/router';
+import {ModelAuthResponse} from '../model/model-auth-response';
 
 @Injectable(
   {
@@ -23,10 +24,11 @@ export class AuthService {
   }
 
   public async login(userName: string, password: string) {
-    await this.fetch.postObject(API.post_auth, new User(userName, password)).subscribe((token) => {
-      localStorage.setItem('token', JSON.stringify(token));
+    await this.fetch.postObject<ModelAuthResponse>(API.post_auth, new User(userName, password)).subscribe((response) => {
+
+      localStorage.setItem('token', response.token);
       this.router.navigate(['/mainPage']);
     });
   }
-
+  
 }
