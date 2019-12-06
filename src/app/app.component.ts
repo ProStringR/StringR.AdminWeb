@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Routes } from './config/config';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,6 @@ export class AppComponent {
   title = 'AdminWeb';
 
   constructor(private router: Router) {
-    this.router.navigate(['/mainPage']);
+    this.router.navigate([Routes.mainPage]);
   }
 }
