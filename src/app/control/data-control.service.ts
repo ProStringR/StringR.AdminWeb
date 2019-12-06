@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { AuthService } from '../service/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,42 +11,41 @@ import { map, catchError } from 'rxjs/operators';
 export class DataControlService {
 
   constructor(
-    protected http: HttpClient,
+    private http: HttpClient,
+    private auth: AuthService
   ) { }
 
   public postObject<T>(url: string, object: any, headers?: HttpHeaders) {
-
-    if (headers == null) {
-      headers = new HttpHeaders({
-        'Content-type': 'application/json'
-      });
-    }
-
     return this.http.post<T>(url, object, {
-      headers: headers
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.auth.getUser().token
+      })
     }).pipe(
       map(data => data),
-      catchError(err => throwError(err))
+      catchError(error => throwError(this.errorHandler(error)))
     );
   }
 
   public getItem<T>(url: string): Observable<T> {
     return this.http.get<T>(url, {
       headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.auth.getUser().token
       })
     }).pipe(
       map(response => {
         return response;
       }),
-      catchError(err => throwError(err))
+      catchError(error => throwError(this.errorHandler(error)))
     );
   }
 
   public getList<T>(url: string): Observable<T[]> {
     return this.http.get<T>(url, {
       headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.auth.getUser().token
       })
     }).pipe(
       map(response => {
@@ -55,8 +55,15 @@ export class DataControlService {
         }
         return res;
       }),
-      catchError(error => throwError(error)),
+      catchError(error => throwError(this.errorHandler(error))),
     );
+  }
+
+  private errorHandler(error: any) {
+    console.log(error)
+    if (error.status === 401) {
+      this.auth.logout()
+    }
   }
 
 }
