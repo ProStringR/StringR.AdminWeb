@@ -14,7 +14,9 @@ export class AddStringersStore {
     constructor(
         private fetch: DataControlService,
         private auth: AuthService
-    ) { }
+    ) {
+        this.updateState();
+    }
 
     @observable
     potentialStringrs: StringrModel[] = [];
@@ -30,7 +32,8 @@ export class AddStringersStore {
 
     @action
     public async updateState() {
-        await this.fetch.getList<StringrModel>(API.get_stringer_by_shopId(this.auth.getUser().id)).subscribe((stringrs) => {
+        // TODO -> Team_Id Skal komme fra Shop / Team, og ikke bare være 1 i fremtiden.
+        await this.fetch.getList<StringrModel>(API.get_stringer_by_shopId(1)).subscribe((stringrs) => {
             console.log(stringrs);
             this.yourStringrs = stringrs;
         });
