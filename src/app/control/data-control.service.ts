@@ -9,13 +9,15 @@ import { map, catchError } from 'rxjs/operators';
 
 export class DataControlService {
 
-  constructor(protected http: HttpClient) { }
+  constructor(
+    protected http: HttpClient,
+  ) { }
 
   public postObject<T>(url: string, object: any, headers?: HttpHeaders) {
 
     if (headers == null) {
       headers = new HttpHeaders({
-        'Content-type' : 'application/json'
+        'Content-type': 'application/json'
       });
     }
 
@@ -28,7 +30,11 @@ export class DataControlService {
   }
 
   public getItem<T>(url: string): Observable<T> {
-    return this.http.get<T>(url).pipe(
+    return this.http.get<T>(url, {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    }).pipe(
       map(response => {
         return response;
       }),
@@ -37,7 +43,11 @@ export class DataControlService {
   }
 
   public getList<T>(url: string): Observable<T[]> {
-    return this.http.get<T>(url).pipe(
+    return this.http.get<T>(url, {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      })
+    }).pipe(
       map(response => {
         const res: T[] = []
         for (const item of Object.keys(response)) {
