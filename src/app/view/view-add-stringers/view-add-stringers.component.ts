@@ -7,6 +7,7 @@ import { AddStringersStore } from 'src/app/store/add-stringers.store';
   styleUrls: ['./view-add-stringers.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class ViewAddStringersComponent implements OnDestroy {
 
   searchYoursText
@@ -16,6 +17,10 @@ export class ViewAddStringersComponent implements OnDestroy {
     window.onbeforeunload = (e) => {
       this.saveCurrentSetup()
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.store.updateState()
   }
 
   searchPotential(search: string) {
