@@ -50,3 +50,21 @@ export class API {
     static get_stringer_by_shopId(shopId): string { return `/api/v1/Stringer/shop/${shopId}` };
 
 }
+
+export class NonSlashRoutes {
+    static mainPage = 'mainPage';
+    static economy = 'economy';
+    static login = 'login';
+    static addstringers = 'addstringers';
+    static storageManagement = 'storageManagement';
+    static orderOverview = 'orderOverview';
+}
+
+export class CustomRoutes {
+    static mainPage = '/' + NonSlashRoutes.mainPage;
+    static economy = '/' + NonSlashRoutes.economy;
+    static login = '/' + NonSlashRoutes.login;
+    static addstringers = '/' + NonSlashRoutes.addstringers;
+    static storageManagement = '/' + NonSlashRoutes.storageManagement;
+    static orderOverview = '/' + NonSlashRoutes.orderOverview;
+}
