@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -15,8 +14,8 @@ export class ViewLoginComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router,
-    private fb: FormBuilder) {
+    private fb: FormBuilder
+  ) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -27,7 +26,6 @@ export class ViewLoginComponent {
     if (this.form.valid) {
       this.authService.login(this.form.value.username, this.form.value.password);
     }
-    //this.router.navigate(['/mainPage']);
   }
 
 }
