@@ -7,8 +7,10 @@ import { StorageManagementStore } from 'src/app/store/storage-management.store';
   styleUrls: ['./view-storage-management.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class ViewStorageManagementComponent {
 
-  constructor(private store: StorageManagementStore) {}
+  constructor(private store: StorageManagementStore) { }
+  ngAfterViewInit(): void { this.store.updateState(); }
 
 }
