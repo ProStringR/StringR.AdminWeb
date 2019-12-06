@@ -2,16 +2,19 @@ import { Injectable } from "@angular/core";
 import { observable, action, computed } from 'mobx-angular';
 import { DataControlService } from '../control/data-control.service';
 import { OrderModel } from '../model/model-order';
-import { API } from '../config/api';
+import { API } from '../config/config';
+import { AuthService } from '../service/auth.service';
 
 @Injectable(
     { providedIn: 'root' }
 )
+
 export class OrdersOverviewStore {
 
-    constructor(private fetch: DataControlService) {
-        this.updateState();
-    }
+    constructor(
+        private fetch: DataControlService,
+        private auth: AuthService
+    ) { }
 
     @observable
     private received: OrderModel[] = [];
@@ -35,7 +38,7 @@ export class OrdersOverviewStore {
         let delivered: OrderModel[] = [];
         let completed: OrderModel[] = [];
 
-        await this.fetch.getList<OrderModel>(API.get_order_by_shopId(1)).subscribe((res) => {
+        await this.fetch.getList<OrderModel>(API.get_order_by_shopId(this.auth.getUser().id)).subscribe((res) => {
             res.forEach((order) => {
                 switch (order.orderStatus) {
                     case 0: received.push(order); break;
