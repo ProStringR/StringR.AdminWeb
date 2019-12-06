@@ -5,16 +5,22 @@
   width: 100%;
 }
 
-.login-form {
-  border-radius: 20px;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 1%;
-  background: white;
-  -ms-transform: translate(-50%, -70%);
-  transform: translate(-50%, -70%);
+img {
+  width: 70%;
+  margin-bottom: 2%;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  display: block;
+  width: 50%;
+}
+
+.btn-link {
+  font-size: 12px;
 }
 
 .backgroundPicture {
@@ -25,4 +31,24 @@
   background-attachment: fixed;
   background-size: cover;
   //filter: blur(3px);
+}
+
+.login-form {
+  text-align: center;
+  border: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  margin: 0;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2%;
+  background: white;
+  -ms-transform: translate(-50%, -70%);
+  transform: translate(-50%, -70%);
+}
+
+.form-group {
+  text-align: start;
 }
