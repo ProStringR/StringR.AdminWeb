@@ -1,10 +1,16 @@
 <div class="economy_container">
 
-    <div class="container">
+    <div class="col-12">
+        
+        <h3>Economy Overview</h3>
 
-        <app-date-picker (onEmit)="changeSortTime($event[0])"></app-date-picker>
+        <div class="container">
 
-        <app-economy-graph *ngFor="let item of charts" [title]="item.title"></app-economy-graph>
+            <app-date-picker (onEmit)="changeSortTime($event[0])"></app-date-picker>
+
+            <app-economy-graph *ngFor="let item of charts" [title]="item.title"></app-economy-graph>
+
+        </div>
 
     </div>
 
