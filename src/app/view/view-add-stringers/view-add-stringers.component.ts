@@ -20,7 +20,8 @@ export class ViewAddStringersComponent implements OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.store.updateState()
+    // TODO Indsæt senere, den laver fejl nu her fordi filter ikke filtrer potential i forhold til yourStringers
+    // this.store.updateState()
   }
 
   searchPotential(search: string) {
