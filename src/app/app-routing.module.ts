@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CustomRoutes, NonSlashRoutes } from './config/config';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/mainPage', pathMatch: 'full'
+    path: '', redirectTo: CustomRoutes.mainPage, pathMatch: 'full'
   },
   {
-    path: 'login',
+    path: NonSlashRoutes.login,
     loadChildren: () => import('./view/view-login/view-login.module').then(m => m.ViewLoginModule)
   },
   {
-    path: 'mainPage',
+    path: NonSlashRoutes.mainPage,
     loadChildren: () =>
       import('./view/view-main-navigation/view-main-navigation.module').
         then(m => m.ViewMainNavigationModule),
