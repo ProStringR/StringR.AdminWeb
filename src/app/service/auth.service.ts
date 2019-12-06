@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { DataControlService } from '../control/data-control.service';
 import { API, CustomRoutes } from './../config/config';
 import { User } from './../model/model-user';
 import { Router } from '@angular/router';
 import { ModelAuthResponse, AuthUser } from '../model/model-auth-response';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable(
   { providedIn: 'root', }
@@ -18,7 +20,7 @@ export class AuthService {
 
   private jwtHelper = new JwtHelperService();
 
-  constructor(private fetch: DataControlService, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   public isAuthenticated(): boolean {
     const token = localStorage.getItem(this.token);
@@ -26,7 +28,7 @@ export class AuthService {
   }
 
   public async login(userName: string, password: string) {
-    await this.fetch.postObject<ModelAuthResponse>(API.post_auth, new User(userName, password)).subscribe((res) => {
+    await this.postObject<ModelAuthResponse>(API.post_auth, new User(userName, password)).subscribe((res) => {
       this.setUser(res);
       this.router.navigate([CustomRoutes.mainPage]);
     });
@@ -55,6 +57,17 @@ export class AuthService {
     localStorage.removeItem(this.token);
     localStorage.removeItem(this.id);
     localStorage.removeItem(this.resMsg);
+  }
+
+  private postObject<T>(url: string, object: any) {
+    return this.http.post<T>(url, object, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    }).pipe(
+      map(data => data),
+      catchError(err => throwError(err))
+    );
   }
 
 }
