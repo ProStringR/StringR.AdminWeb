@@ -38,7 +38,8 @@ export class OrdersOverviewStore {
         let delivered: OrderModel[] = [];
         let completed: OrderModel[] = [];
 
-        await this.fetch.getList<OrderModel>(API.get_order_by_shopId(this.auth.getUser().id)).subscribe((res) => {
+        // TODO -> Team_Id Skal komme fra Shop / Team, og ikke bare være 1 i fremtiden.
+        await this.fetch.getList<OrderModel>(API.get_order_by_shopId(1)).subscribe((res) => {
             res.forEach((order) => {
                 switch (order.orderStatus) {
                     case 0: received.push(order); break;
