@@ -3,35 +3,36 @@ import { Routes, RouterModule } from '@angular/router';
 import { ViewMainNavigationComponent } from './view-main-navigation.component';
 import { AuthGuardService } from 'src/app/service/auth-guard.service';
 import { AuthService } from 'src/app/service/auth.service';
+import { CustomRoutes, NonSlashRoutes } from './../../config/config';
 
 const routes: Routes = [
     {
         path: '', component: ViewMainNavigationComponent, canActivateChild: [AuthGuardService], children: [
             {
-                path: '', redirectTo: '/economy', pathMatch: 'full'
+                path: '', redirectTo: CustomRoutes.economy, pathMatch: 'full'
             },
             {
-                path: 'economy',
+                path: NonSlashRoutes.economy,
                 loadChildren: () => import('./../view-economy-overview/view-economy-overview.module').
                     then(m => m.ViewEconomyOverviewModule)
             },
             {
-                path: 'addstringers',
+                path: NonSlashRoutes.addstringers,
                 loadChildren: () => import('./../view-add-stringers/view-add-stringers.module').
                     then(m => m.ViewAddStringersModule)
             },
             {
-                path: 'storageManagement',
+                path: NonSlashRoutes.storageManagement,
                 loadChildren: () => import('./../view-storage-management/view-storage-management.module').
                     then(m => m.ViewStorageManagementModule)
             },
             {
-                path: 'orderOverview',
+                path: NonSlashRoutes.orderOverview,
                 loadChildren: () => import('./../view-order-overview/view-order-overview.module').
                     then(m => m.ViewOrderOverviewModule)
             },
             {
-                path: '**', redirectTo: '/login', pathMatch: 'full'
+                path: '**', redirectTo: CustomRoutes.login, pathMatch: 'full'
             },
         ]
     },
